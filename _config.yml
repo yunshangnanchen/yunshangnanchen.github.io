@@ -3,11 +3,11 @@ description: | # 头像背后的信息（html格式），<br/>代表换行
   16岁在读中职生<br/>
   永远喜欢伊蕾娜<br/>
   21.ovo<br/>
-  ASC<br/>
-  <a href="mailto:i@wu-kan.cn">
+  お帰りなさい<br/>
+  <a href="dybage@outlook.com">
     <i class="fas fa-envelope"></i>
   </a>
-  <a href="https://github.com/wu-kan">
+  <a href="https://github.com/yunshangnanchen">
     <i class="fab fa-github"></i>
   </a>
   <a href="https://codeforces.com/profile/WuK">
@@ -16,7 +16,7 @@ description: | # 头像背后的信息（html格式），<br/>代表换行
   <a href="https://vjudge.net/user/WuK">
     <i class="fas fa-smile"></i>
   </a>
-  <a href="https://www.zhihu.com/people/wu.kan/activities">
+  <a href="https://www.zhihu.com/people/nanch-17">
     <i class="fab fa-zhihu"></i>
   </a>
   <iframe
@@ -61,7 +61,7 @@ jekyll-theme-WuK: # 我的主题的自定义样式都在这个命名空间
         <link
           rel="shortcut
           icon"
-          href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=32"
+          href="https://raw.githubusercontent.com/yunshangnanchen/yunshangnanchen.github.io/main/assets/image/%E5%A4%B4%E5%83%8F.jpg"
         />
       - | # 来自lanyon的页面样式，不要改
         <link
