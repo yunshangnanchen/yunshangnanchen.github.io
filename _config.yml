@@ -419,8 +419,8 @@ jekyll-theme-WuK: # 我的主题的自定义样式都在这个命名空间
         - | # 我的备案信息，请你的网站删掉这一项。互联网非法外之地！
           <div>
             <i class="fas fa-info-circle fa-fw"></i>
-            <a href="http://beian.miit.gov.cn">
-              粤ICP备 20024947号
+            <a href="http://">
+              粤ICP备 3131231号
             </a>
           </div>
         - | # 公安网备信息
