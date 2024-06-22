@@ -1,20 +1,20 @@
-# 南尘佳佳 21.ovo
+# NanchenJiaJia 21.ovo
 
-欢迎访问我的个人主页！下面向你介绍一下我自己吧~
+Welcome to my blog！
 
 <!-- slide -->
 
-## 我的一些联系方式
+## 私の連絡先の詳細
 
-- Address: **Sun Yat-sen University - 132 Waihuan East Rd. - Xiaogan, China**
-- Phone: **+86 15549826216**
-- Site: **<https://wu-kan.cn>**
+- Domicile: **Sun Yat-sen University - 132 Waihuan East Rd. - Xiaogan, China**
+- My Phone: **+86 15500001391**
+- Related Links: **<https://bilibili.com>**
 
 <!-- slide vertical=true -->
 
 - E-mail:
-  - **[i@wu-kan.cn](mailto:i@wu-kan.cn)**
-  - **[wukan3@mail2.sysu.edu.cn](mailto:wukan3@mail2.sysu.edu.cn)**
+  - **[26434347355@qq.com](mailto:26434347355@qq.com)**
+  - **[DYBAGE@outlook.com](mailto:DYBAGE@outlook.com)**
 - WeChat: **Wu-\_-Kan**
 - QQ: **2643437355**
 
@@ -80,13 +80,15 @@ School of Data and Computer Science, Sun Yat-sen University, Guangzhou, Sept. 20
 
 ## 我的一些领导力
 
-TBD
+曾是游历四方的旅行者
+曾是宇宙银河棒球侠
+曾在基金会担任司辰
 
 <!-- slide -->
 
 ## 我的一些文字
 
-- [基于 Jekyll 搭建个人博客](https://wu-kan.cn/_posts/2019-01-18-%E5%9F%BA%E4%BA%8EJekyll%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/)
+- [新的开始](https://yunshangnanchen.github.io/_posts/2024-06-22-%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/)
 - [我的算法竞赛模板](https://wu-kan.cn/_posts/2019-02-04-%E6%88%91%E7%9A%84%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%A8%A1%E6%9D%BF/)
 - [这一年的一点感想](https://wu-kan.cn/_posts/2019-07-18-%E8%BF%99%E4%B8%80%E5%B9%B4%E7%9A%84%E4%B8%80%E7%82%B9%E6%84%9F%E6%83%B3/)
 
