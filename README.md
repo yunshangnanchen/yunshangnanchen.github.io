@@ -7,7 +7,6 @@ Welcome to my blog！
 ## 私の連絡先の詳細
 
 - Domicile: **Sun Yat-sen University - 132 Waihuan East Rd. - Xiaogan, China**
-# My Phone: **+86 15500001391**
 - Related Links: **<https://bilibili.com>**
 
 <!-- slide vertical=true -->
