@@ -15,25 +15,20 @@ Welcome to my blog！
 - E-mail:
   - **[26434347355@qq.com](mailto:26434347355@qq.com)**
   - **[DYBAGE@outlook.com](mailto:DYBAGE@outlook.com)**
-- WeChat: **Wu-\_-Kan**
+- WeChat: **Nanchen**
 - QQ: **2643437355**
 
 <!-- slide -->
 
-## 我的一些教育情况
+## 兴趣爱好
 
 <!-- slide vertical=true -->
 
-School of Data and Computer Science, Sun Yat-sen University, Guangzhou, Sept. 2017 - Jul. 2021(expected)
-
-- Bachelor of Computer Science (Supercomputer Class)
-  - Principle of Supercomputer
-  - Parallel and Distributed Computing
-  - High Performance Computing
+画画
 
 <!-- slide -->
 
-## 我的一些项目成果
+## 我的网站源码
 
 <!-- slide vertical=true -->
 
@@ -80,20 +75,17 @@ School of Data and Computer Science, Sun Yat-sen University, Guangzhou, Sept. 20
 
 ## 我的一些领导力
 
-曾是游历四方的旅行者
-曾是宇宙银河棒球侠
-曾在基金会担任司辰
+- 曾是游历四方的旅行者
+- 曾是宇宙银河棒球侠
+- 曾在基金会担任司辰
 
 <!-- slide -->
 
 ## 我的一些文字
 
 - [新的开始](https://yunshangnanchen.github.io/_posts/2024-06-22-%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/)
-- [我的算法竞赛模板](https://wu-kan.cn/_posts/2019-02-04-%E6%88%91%E7%9A%84%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%A8%A1%E6%9D%BF/)
-- [这一年的一点感想](https://wu-kan.cn/_posts/2019-07-18-%E8%BF%99%E4%B8%80%E5%B9%B4%E7%9A%84%E4%B8%80%E7%82%B9%E6%84%9F%E6%83%B3/)
 
 <!-- slide vertical=true -->
 
-- [再见，算法竞赛！](https://wu-kan.cn/_posts/2019-11-04-%E5%86%8D%E8%A7%81-%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/)
-- [Markdown 写作心得](https://wu-kan.cn/_posts/2020-01-18-Markdown%E5%86%99%E4%BD%9C%E5%BF%83%E5%BE%97/)
+- [在文档中插入网易云](https://yunshangnanchen.github.io/_posts/2024-06-22-在文档中插入网易云.md)
 - [今日此时所想之事](https://wu-kan.cn/_posts/2020-01-24-%E4%BB%8A%E6%97%A5%E6%AD%A4%E6%97%B6%E6%89%80%E6%83%B3%E4%B9%8B%E4%BA%8B/)
