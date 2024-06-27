@@ -7,7 +7,7 @@ Welcome to my blog！
 ## 私の連絡先の詳細
 
 - Domicile: **Sun Yat-sen University - 132 Waihuan East Rd. - Xiaogan, China**
-- My Phone: **+86 15500001391**
+# My Phone: **+86 15500001391**
 - Related Links: **<https://bilibili.com>**
 
 <!-- slide vertical=true -->
@@ -15,7 +15,7 @@ Welcome to my blog！
 - E-mail:
   - **[26434347355@qq.com](mailto:26434347355@qq.com)**
   - **[DYBAGE@outlook.com](mailto:DYBAGE@outlook.com)**
-- WeChat: **Nanchen**
+- WeChat: **Nanchen.OVO**
 - QQ: **2643437355**
 
 <!-- slide -->
@@ -24,7 +24,10 @@ Welcome to my blog！
 
 <!-- slide vertical=true -->
 
-画画
+- **画画**
+- **折腾计算机**
+- **视频剪辑**
+- **3D建模**
 
 <!-- slide -->
 
@@ -41,15 +44,12 @@ Welcome to my blog！
 
 <!-- slide vertical=true -->
 
-- **Top 0.05% in 11395**, [The 18th CCF Certified Software Professional](https://wu-kan.cn/_posts/2019-12-16-%E7%AC%AC%E5%8D%81%E5%85%AB%E6%AC%A1CCF%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%BD%AF%E4%BB%B6%E8%83%BD%E5%8A%9B%E8%AE%A4%E8%AF%81/), Dec. 2019
-- **Silver Medal**, [ICPC Asia Regional Contest Xuzhou Site](https://wu-kan.cn/_posts/2019-11-04-%E5%86%8D%E8%A7%81-%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B/), Nov. 2019
-- **Second Scholarship**, Oct. 2019
-- **First Prize**, China Collegiate Programming Contest, Guangdong Division, May 2019
+- **荣获2024届数字艺术设计大赛奖项**
 
 <!-- slide vertical=true -->
 
-- **Third Scholarship**, Oct. 2018
-- **First Prize**, China Collegiate Programming Contest, Guangdong Division, May 2018
+- 
+- 
 
 <!-- slide -->
 
@@ -58,15 +58,11 @@ Welcome to my blog！
 <!-- slide vertical=true -->
 
 - **C/C++**, Familiar
-  - **OpenMP**, Familiar
-  - **MPI**, Familiar&Learning
-  - **CUDA**, Learning
 - **Python**, Familiar
 
 <!-- slide vertical=true -->
 
 - **Markdown**, Familiar
-- **LaTex**, Familiar
 - **Linux**, Familiar&Learning
 - **Git**, Familiar
 - **VSCode**, Familiar
@@ -75,9 +71,9 @@ Welcome to my blog！
 
 ## 我的一些领导力
 
-- 曾是游历四方的旅行者
-- 曾是宇宙银河棒球侠
-- 曾在基金会担任司辰
+- **曾是游历四方的旅行者**
+- **曾是宇宙银河棒球侠**
+- **曾在基金会担任司辰**
 
 <!-- slide -->
 
