@@ -14,6 +14,7 @@
       - [Markdown_高级技巧](/zh-cn/Markdown/Markdown_高级技巧.md)
       - [数学符号大全](/zh-cn/Markdown/Markdown%20数学符号大全.md)
       - [在文档中插入网易云](/zh-cn/Markdown/Markdown_在文档中插入网易云.md)
+      - [在文档中插入视频](/zh-cn/Markdown/Markdown_插入视频.md)
 
 - [关于Python](/zh-cn/python3/2024-10-12-python3介绍.md)
   - [Python3_基本数据类型](/zh-cn/python3/2024_10_12_Python3_基本数据类型.md)
