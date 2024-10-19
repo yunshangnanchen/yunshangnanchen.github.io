@@ -1,7 +1,11 @@
 - [首页՞(ᗜˬᗜ)՞](/README.md)
-  - [我的第一篇文章](/zh-cn/2024-06-22-我的第一篇文章.md)
+  - [我的第一篇文章](/zh-cn/one%20day/2024-06-22-我的第一篇文章.md)
+ 
+- [学习笔记&每日所想](/zh-cn/one%20day/2024-10-09.md)
+  - [2024-10-0]
 
-- [关于Markdown](/zh-cn/Markdown/Markdown_介绍.md)
+- ### 关于Markdown
+  - [Markdown介绍](/zh-cn/Markdown/Markdown_介绍.md)
   - [Markdown_标题](/zh-cn/Markdown/Markdown_标题.md)
   - [Markdown_段落格式](/zh-cn/Markdown/Markdown_段落格式.md)
   - [Markdown_列表](/zh-cn/Markdown/Markdown_列表.md)
@@ -14,9 +18,10 @@
       - [Markdown_高级技巧](/zh-cn/Markdown/Markdown_高级技巧.md)
       - [数学符号大全](/zh-cn/Markdown/Markdown_数学符号大全.md)
       - [在文档中插入网易云](/zh-cn/Markdown/Markdown_在文档中插入网易云.md)
-      - [在文档中插入视频](/zh-cn/Markdown/Markdown_插入视频.md)
+      - [在文档中插入视频](/zh-cn/Markdown/Markdown_在文档中插入视频.md)
 
-- [关于Python](/zh-cn/python3/2024-10-12-python3介绍.md)
+- ### 关于Python
+  - [Python3介绍](/zh-cn/python3/2024-10-12-python3介绍.md)
   - [Python3_基本数据类型](/zh-cn/python3/2024_10_12_Python3_基本数据类型.md)
   - [Python3_数据类型转换](/zh-cn/python3/2024-10-12-Python3_数据类型转换.md)
   - [Python3_解释器](/zh-cn/python3/2024-10-12-Python3_解释器.md)
@@ -32,7 +37,7 @@
   - [Python3_os模块的使用方法](/zh-cn/python3/2024-10-12-python-Python3-os使用方法.md)
   - [Python3_面向对象](/zh-cn/python3/2024-10-12-python3面向对象.md)
 
-- 关于C#
+- ### 关于C#
   - [C#_程序结构](/zh-cn/C-Sharp/C-sharp程序结构.md)
   - [C#_基本语法](/zh-cn/C-Sharp/C-sharp基本语法.md)
   - [C#_数据类型](/zh-cn/C-Sharp/C-sharp数据类型.md)
@@ -178,7 +183,7 @@
     - [C++ <cfloat>]()
     - [C++ <cstdlib>]() -->
 
-<!-- - 关于Linux
+<!-- - ## 关于Linux
   - [Linux 教程]()
     - [Linux 教程]()
       - [Linux 简介]()
@@ -214,7 +219,7 @@
       - [Linux环境下安装Mysql](/zh-cn/2024-07-12-Linux_安装Mysql.md)
       - [Archlinux的安装](/zh-cn/2024-06-30-Linux-Archlinux安装教程.md) -->
 
-- 关于AE的那些表达式
+- ### 关于AE的那些表达式
   - [AE弹性晃动表达式](/zh-cn/2024-08-30-AE弹性晃动表达式.md)
 
 <!-- - [HTML 教程]()
