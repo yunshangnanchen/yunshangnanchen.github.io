@@ -44,7 +44,7 @@ Markdown 还没有办法指定图片的高度与宽度，如果你需要的话�
 <img src="https://static.jyshare.com/images/runoob-logo.png" width="50%">
 ```
 
-## 图片的高级使用技巧
+**图片的高级使用技巧**
 
 图片尺寸调整:
 
@@ -84,7 +84,7 @@ Markdown本身不支持直接调整图片尺寸。但你可以通过使用HTML�
 ![Local Image](./images/picture.jpg)
 ```
 
-## 图片格式和优化
+**图片格式和优化**
 
 ### 支持的图片格式
 
