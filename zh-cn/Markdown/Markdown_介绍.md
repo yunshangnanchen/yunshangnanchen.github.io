@@ -21,8 +21,7 @@ VSCode 默认集成了 Markdown 文档编辑插件，原生就支持高亮 Markd
 
 VSCode（全称：Visual Studio Code）是一款由微软开发且跨平台的免费源代码编辑器。
 
-1. VScode 安装教程：<https://www.runoob.com/w3cnote/vscode-tutorial.html>
-2. VScode 官网地址：<https://code.visualstudio.com/>
+1. VScode 官网地址：<https://code.visualstudio.com/>
 
 VSCode 实时预览还需要执行 Markdown: Open Preview to the Side 命令来实现。
 

@@ -2,10 +2,10 @@
   - [我的第一篇文章](/zh-cn/one%20day/2024-06-22-我的第一篇文章.md)
  
 - [学习笔记&每日所想](/zh-cn/one%20day/2024-10-09.md)
-  - [2024-10-0]
+  - [2024-10-20](/zh-cn/one%20day/2024-10-20.md)
+  - [2024-10-27](zh-cn/one%20day/2024-10-27.md)
 
-- ### 关于Markdown
-  - [Markdown介绍](/zh-cn/Markdown/Markdown_介绍.md)
+- ### [关于Markdown](/zh-cn/Markdown/Markdown_介绍.md)
   - [Markdown_标题](/zh-cn/Markdown/Markdown_标题.md)
   - [Markdown_段落格式](/zh-cn/Markdown/Markdown_段落格式.md)
   - [Markdown_列表](/zh-cn/Markdown/Markdown_列表.md)
