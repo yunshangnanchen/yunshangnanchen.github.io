@@ -1,27 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <link rel="stylesheet" media="(prefers-color-scheme: light)" href="/css/theme-simple.css">
+  <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="/css/theme-simple-dark.css">
 </head>
+
 <body>
-  <div id="app">第一次加载可能会慢，请稍后。Ciallo～(∠・ω< )⌒☆</div>
+  <div id="app">第一次加载可能会慢，请稍后。</div>
   <script>
     window.$docsify = {
       loadNavbar: true,
       coverpage: true,
       loadSidebar: true,
       subMaxLevel: 2,
-      name: '',
-      repo: ''
+      name: 'NanChenJiaJia的博客',
+      repo: 'yunshangnanchen',
+      
+      // 全局搜索插件配置
+      search: {
+                depth      : 3,
+                noData     : 'No results!',
+                placeholder: 'Search...'
+            },
+      plugins: [
+          // Restores initial <title>
+          function persistTitle(hook, vm) {
+              var titleElm = document.querySelector('title');
+              var rootTitle = titleElm && titleElm.textContent;
+              var pageTitlePrefix = window.$docsify.name ? window.$docsify.name + ' - ' : '';
+
+              if (rootTitle) {
+                  hook.doneEach(function () {
+                      var currentTitle = titleElm.textContent;
+                      var isRoot = !/\/[a-z]/.test(location.hash);
+                      var newTitle = isRoot ? rootTitle : pageTitlePrefix + currentTitle;
+
+                      titleElm.textContent = newTitle;
+                  });
+              }
+          }
+      ]
+      
     }
   </script>
-  <!-- Docsify v4 -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-</body>
-</html>
+  <!-- <script src="js/docsify@4.js"></script> -->
+  <script src="js/docsify.min.js"></script>
+  <script src="js/docsify-themeable.min.js"></script>
 
+  <!-- Recommended -->
+  <script src="js/search.js"></script>
+  <script src="js/zoom-image.min.js"></script>
+  <!-- 代码右键复制插件 -->
+  <script src="js/docsify-copy-code.min.js"></script>
+  <script src="js/docsify-pagination.min.js"></script>
+</body>
+
+</html>

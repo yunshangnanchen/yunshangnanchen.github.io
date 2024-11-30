@@ -1,14 +1,14 @@
 - [首页՞(ᗜˬᗜ)՞](/README.md)
   - [我的第一篇文章](/zh-cn/one%20day/2024-06-22-我的第一篇文章.md)
- 
 - [学习笔记&每日所想](/zh-cn/one%20day/2024-10-09.md)
+  - [2024-11-21](/zh-cn/one%20day/2024-11-21.md)
   - [2024-11-02](zh-cn/one%20day/2024-11-02.md)
   - [2024-10-27](zh-cn/one%20day/2024-10-27.md)
   - [2024-10-20](/zh-cn/one%20day/2024-10-20.md)
-  
 
 - [计算机的应知]()
   - [计算机网络设备](/zh-cn/计算机的应知/计算机网络设备/网络设备.md)
+
 - [关于Markdown](/zh-cn/Markdown/Markdown_介绍.md)
   - [Markdown_标题](/zh-cn/Markdown/Markdown_标题.md)
   - [Markdown_段落格式](/zh-cn/Markdown/Markdown_段落格式.md)
@@ -24,8 +24,7 @@
       - [在文档中插入网易云](/zh-cn/Markdown/Markdown_在文档中插入网易云.md)
       - [在文档中插入视频](/zh-cn/Markdown/Markdown_在文档中插入视频.md)
 
-- ### 关于Python
-  - [Python3介绍](/zh-cn/python3/2024-10-12-python3介绍.md)
+- [关于Python](/zh-cn/python3/2024-10-12-python3介绍.md)
   - [Python3_基本数据类型](/zh-cn/python3/2024_10_12_Python3_基本数据类型.md)
   - [Python3_数据类型转换](/zh-cn/python3/2024-10-12-Python3_数据类型转换.md)
   - [Python3_解释器](/zh-cn/python3/2024-10-12-Python3_解释器.md)
@@ -40,8 +39,12 @@
   - [python3_File](/zh-cn/python3/2024-10-12-python3_File.md)
   - [Python3_os模块的使用方法](/zh-cn/python3/2024-10-12-python-Python3-os使用方法.md)
   - [Python3_面向对象](/zh-cn/python3/2024-10-12-python3面向对象.md)
-
-- ### 关于C#
+<!-- - **Links**
+- [![Code](img/code.svg)Demo Sandbox](https://codesandbox.io/s/xv36w4695o)
+- [![Github](img/github.svg)Github](https://github.com/jhildenbiddle/docsify-themeable)
+- [![NPM](img/npm.svg)NPM](https://www.npmjs.com/package/docsify-themeable)
+- [![Twitter](img/twitter.svg)@jhildenbiddle](http://twitter.com/jhildenbiddle) -->
+<!-- - ### 关于C#
   - [C#_程序结构](/zh-cn/C-Sharp/C-sharp程序结构.md)
   - [C#_基本语法](/zh-cn/C-Sharp/C-sharp基本语法.md)
   - [C#_数据类型](/zh-cn/C-Sharp/C-sharp数据类型.md)
@@ -80,7 +83,7 @@
     - [C#_泛型（Generic）](/zh-cn/C-Sharp/C-sharp泛型.md)
     - [C#_匿名方法](/zh-cn/C-Sharp/C-sharp匿名方法.md)
     - [C#_不安全代码](/zh-cn/C-Sharp/C-sharp不安全的代码.md)
-    - [C#_多线程](/zh-cn/C-Sharp/C-sharp多线程.md)
+    - [C#_多线程](/zh-cn/C-Sharp/C-sharp多线程.md) -->
 
 <!-- - [关于C++]()
   - [C++ 教程]()
@@ -223,8 +226,8 @@
       - [Linux环境下安装Mysql](/zh-cn/2024-07-12-Linux_安装Mysql.md)
       - [Archlinux的安装](/zh-cn/2024-06-30-Linux-Archlinux安装教程.md) -->
 
-- ### 关于AE的那些表达式
-  - [AE弹性晃动表达式](/zh-cn/2024-08-30-AE弹性晃动表达式.md)
+<!-- - ### 关于AE的那些表达式
+  - [AE弹性晃动表达式](/zh-cn/2024-08-30-AE弹性晃动表达式.md) -->
 
 <!-- - [HTML 教程]()
   - [HTML 教程]()
