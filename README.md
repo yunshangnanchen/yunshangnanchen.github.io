@@ -19,5 +19,5 @@
 やがて季節は春を迎える――
 Trying our best, heading to our own future.  
 ```
->人们总是遗憾过去担心未来。  
 > Yunshang_NanChenJiaJIa.
+>继续前行.
