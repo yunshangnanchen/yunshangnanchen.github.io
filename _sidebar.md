@@ -1,10 +1,10 @@
 - [首页՞(ᗜˬᗜ)՞](/README.md)
   - [我的第一篇文章](/zh-cn/one%20day/2024-06-22-我的第一篇文章.md)
 - [学习笔记&每日所想](/zh-cn/one%20day/2024-10-09.md)
+  - [2025-01-05](/zh-cn/one%20day/2025-01-05.md)
   - [2025-01-01](/zh-cn/one%20day/2025-01-01.md)
   - [2024-12-29](/zh-cn/one%20day/2024-12-29.md)
   - [2024-11-21](/zh-cn/one%20day/2024-11-21.md)
-  - [2024-11-02](zh-cn/one%20day/2024-11-02.md)
   - [2024-10-27](zh-cn/one%20day/2024-10-27.md)
   - [2024-10-20](/zh-cn/one%20day/2024-10-20.md)
 
@@ -20,7 +20,6 @@
   - [Markdown_链接](/zh-cn/Markdown/Markdown_链接.md)
   - [Markdown_图片](/zh-cn/Markdown/Markdown_图片.md)
   - [Markdown_表格](/zh-cn/Markdown/Markdown_表格.md)
-    - 高级技巧
       - [Markdown_高级技巧](/zh-cn/Markdown/Markdown_高级技巧.md)
       - [数学符号大全](/zh-cn/Markdown/Markdown_数学符号大全.md)
       - [在文档中插入网易云](/zh-cn/Markdown/Markdown_在文档中插入网易云.md)
