@@ -1,6 +1,7 @@
 - [首页՞(ᗜˬᗜ)՞](/README.md)
   - [我的第一篇文章](/zh-cn/one%20day/2024-06-22-我的第一篇文章.md)
 - [学习笔记&每日所想](/zh-cn/one%20day/2024-10-09.md)
+  - [2025-04-06](/zh-cn/one%20day/2025-04-06.md)
   - [2025-01-11](/zh-cn/one%20day/2025-01-11.md)
   - [2025-01-05](/zh-cn/one%20day/2025-01-05.md)
   - [2025-01-01](/zh-cn/one%20day/2025-01-01.md)
@@ -9,10 +10,10 @@
   - [2024-10-27](zh-cn/one%20day/2024-10-27.md)
   - [2024-10-20](/zh-cn/one%20day/2024-10-20.md)
 
-- [计算机的应知]()
-  - [计算机网络设备](/zh-cn/计算机的应知/计算机网络设备/网络设备.md)
+<!-- - [计算机的应知]()
+  - [计算机网络设备](/zh-cn/计算机的应知/计算机网络设备/网络设备.md) -->
 
-- [关于Markdown](/zh-cn/Markdown/Markdown_介绍.md)
+<!-- - [关于Markdown](/zh-cn/Markdown/Markdown_介绍.md)
   - [Markdown_标题](/zh-cn/Markdown/Markdown_标题.md)
   - [Markdown_段落格式](/zh-cn/Markdown/Markdown_段落格式.md)
   - [Markdown_列表](/zh-cn/Markdown/Markdown_列表.md)
@@ -24,7 +25,7 @@
       - [Markdown_高级技巧](/zh-cn/Markdown/Markdown_高级技巧.md)
       - [数学符号大全](/zh-cn/Markdown/Markdown_数学符号大全.md)
       - [在文档中插入网易云](/zh-cn/Markdown/Markdown_在文档中插入网易云.md)
-      - [在文档中插入视频](/zh-cn/Markdown/Markdown_在文档中插入视频.md)
+      - [在文档中插入视频](/zh-cn/Markdown/Markdown_在文档中插入视频.md) -->
 
 - [关于Python](/zh-cn/python3/2024-10-12-python3介绍.md)
   - [Python3_基本数据类型](/zh-cn/python3/2024_10_12_Python3_基本数据类型.md)
