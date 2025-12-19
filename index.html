@@ -1,64 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <title>Document</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" media="(prefers-color-scheme: light)" href="/css/theme-simple.css">
-  <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="/css/theme-simple-dark.css">
-</head>
-
-<body>
-  <div id="app">欢迎来到我的网站，请稍后。。。。。</div>
-  <script>
-    window.$docsify = {
-      loadNavbar: true,
-      coverpage: true,
-      loadSidebar: true,
-      subMaxLevel: 2,
-      name: 'NanChenJiaJia',
-      repo: 'yunshangnanchen',
-
-      // 全局搜索插件配置
-      search: {
-                depth      : 3,
-                noData     : 'No results!',
-                placeholder: 'Search...'
-            },
-      plugins: [
-          // Restores initial <title>
-          function persistTitle(hook, vm) {
-              var titleElm = document.querySelector('title');
-              var rootTitle = titleElm && titleElm.textContent;
-              var pageTitlePrefix = window.$docsify.name ? window.$docsify.name + ' - ' : '';
-
-              if (rootTitle) {
-                  hook.doneEach(function () {
-                      var currentTitle = titleElm.textContent;
-                      var isRoot = !/\/[a-z]/.test(location.hash);
-                      var newTitle = isRoot ? rootTitle : pageTitlePrefix + currentTitle;
-
-                      titleElm.textContent = newTitle;
-                  });
-              }
-          }
-      ]
-      
-    }
-  </script>
-  <!-- <script src="js/docsify@4.js"></script> -->
-  <script src="js/docsify.min.js"></script>
-  <script src="js/docsify-themeable.min.js"></script>
-
-  <!-- Recommended -->
-  <script src="js/search.js"></script>
-  <script src="js/zoom-image.min.js"></script>
-  <!-- 代码右键复制插件 -->
-  <script src="js/docsify-copy-code.min.js"></script>
-  <script src="js/docsify-pagination.min.js"></script>
-</body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>demo</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>

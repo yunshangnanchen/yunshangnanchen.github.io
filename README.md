@@ -1,23 +1,16 @@
-# 欢迎来到我的博客՞(ᗜˬᗜ)՞\
+# React + Vite
 
-### (  ._.)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-- “回忆，人类穿梭时空的唯一方法”
-- “沉思，人类停止时间的唯一手段”
-- “幻想，人类穿越未来的唯一方式”
+Currently, two official plugins are available:
 
-```
-2026年、冬。  
-やっとのことで教員免許を取得した私の初の勤務地は、  
-田舎町のほんとに小さな学校でした。  
-生徒数わずか４名の複合学級。  
-子どもたちと過ごす、廃校までの４ヶ月間。  
-そんな短期間で、歳もそれほど違わない私に何が出来るというのでしょう。  
-私と、子供たちと、校長と、残った町の人たち。  
-それぞれが、それぞれの未来と精一杯向き合い、そして、  
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-やがて季節は春を迎える――
-Trying our best, heading to our own future.  
-```
-> Yunshang_NanChenJiaJIa.
->继续前行.
+## React Compiler
+
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
