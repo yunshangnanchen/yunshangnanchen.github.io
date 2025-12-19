@@ -1,6 +1,8 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+/* Tailwind CSS v4 引入方式
+  这行代码会自动包含 base, components 和 utilities，
+  不再需要分开使用 @import "tailwindcss/base" 等。
+*/
+@import "tailwindcss";
 
 /* 保持之前的适配样式 */
 :root {
@@ -16,6 +18,9 @@ body {
   height: 100vh;
   overflow: hidden;
   background-color: #0f0f0f;
+  /* 确保全局字体渲染平滑 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
