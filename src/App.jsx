@@ -11,68 +11,71 @@ const App = () => {
   const [activeChapter, setActiveChapter] = useState(0);
 
   // 模拟 BIOS 启动日志
-  useEffect(() => {
-    const logs = [
-      "BIOS version 1.0.42 (C) 1992 HAKONIWA CORP.",
-      "CPU: STAGE_MACHINE_X86 @ 66MHz",
-      "Memory Test: 65536KB OK",
-      "",
-      "Detecting Storage Devices...",
-      "Primary Master: HAKONIWA-SSD-512MB (LBA Mode)",
-      "Loading HAKONIWA Kernel...",
-      "kernel: [0.452031] Initializing Stage Machine matrix...",
-      "systemd: Loading ARK-21 drivers...",
-      "systemd: Initializing ATLANTIS deep-sea cooling...",
-      "systemd: Network protocol: TCP/IP STACK LOADED",
-      "login: GUEST (uid=1000) access granted.",
-      "",
-      "READY TO INITIALIZE GRAPHICAL INTERFACE.",
-      
-    ];
-
-    let i = 0;
-    let timer;
-
-    const setFavicon = () => {
-      // 删除现有的favicon链接
-      const existingIcons = document.querySelectorAll('link[rel*="icon"]');
-      existingIcons.forEach(icon => {
-        if (icon.parentNode) {
-          icon.parentNode.removeChild(icon);
-        }
-      });
-      
-      // 创建新的favicon链接
-      const link = document.createElement('link');
-      link.rel = 'icon';
-      link.type = 'image/jpeg';
-      link.href = 'https://www.diverse.direct/wp/wp-content/uploads/j_m_DVSP-0160.jpg';
-      document.head.appendChild(link);
-    };
-    const processLogs = () => {
-      if (i < logs.length) {
-        setBootLogs(prev => [...prev, logs[i]]);
-        let delay = 10 + Math.random() * 20;
-        if (logs[i]?.includes("Loading") || logs[i]?.includes("Initializing")) delay = 400;
-        i++;
-        timer = setTimeout(processLogs, delay);
-      } else {
-        timer = setTimeout(() => setShowEnterButton(true), 500);
-      }
-    };
-    processLogs();
-    return () => clearTimeout(timer);
-  }, []);
-
-  const ClockDisplay = () => {
-    const [time, setTime] = useState(new Date().toLocaleTimeString());
+// 模拟 BIOS 启动日志
     useEffect(() => {
-      const t = setInterval(() => setTime(new Date().toLocaleTimeString()), 1000);
-      return () => clearInterval(t);
-    }, []);
-    return <span className="bg-[#0a0a0a] text-[#00ff41] px-3 py-0.5 font-mono shadow-inner border border-[#333]">{time}</span>;
-  };
+      const logs = [
+        "BIOS version 1.0.42 (C) 1992 HAKONIWA CORP.",
+        "CPU: STAGE_MACHINE_X86 @ 66MHz",
+        "Memory Test: 65536KB OK",
+        "",
+        "Detecting Storage Devices...",
+        "Primary Master: HAKONIWA-SSD-512MB (LBA Mode)",
+        "Loading HAKONIWA Kernel...",
+        "kernel: [0.452031] Initializing Stage Machine matrix...",
+        "systemd: Loading ARK-21 drivers...",
+        "systemd: Initializing ATLANTIS deep-sea cooling...",
+        "systemd: Network protocol: TCP/IP STACK LOADED",
+        "login: GUEST (uid=1000) access granted.",
+        "",
+        "READY TO INITIALIZE GRAPHICAL INTERFACE.",
+      ];
+      // 设置网站图标
+      const setFavicon = () => {
+        // 删除现有的favicon链接
+        const existingIcons = document.querySelectorAll('link[rel*="icon"]');
+        existingIcons.forEach(icon => {
+          if (icon.parentNode) {
+            icon.parentNode.removeChild(icon);
+          }
+        });
+        
+        // 创建新的favicon链接
+        const link = document.createElement('link');
+        link.rel = 'shortcut icon'; // 使用 shortcut icon 更兼容
+        link.type = 'image/jpeg';
+        link.href = 'https://www.diverse.direct/wp/wp-content/uploads/j_m_DVSP-0160.jpg';
+        document.head.appendChild(link);
+      };
 
+      // 调用设置favicon的函数
+      setFavicon();
+
+      let i = 0;
+      let timer;
+      
+      const processLogs = () => {
+        if (i < logs.length) {
+          setBootLogs(prev => [...prev, logs[i]]);
+          let delay = 10 + Math.random() * 20;
+          if (logs[i]?.includes("Loading") || logs[i]?.includes("Initializing")) delay = 400;
+          i++;
+          timer = setTimeout(processLogs, delay);
+        } else {
+          timer = setTimeout(() => setShowEnterButton(true), 500);
+        }
+      };
+      
+      processLogs();
+      return () => clearTimeout(timer);
+    }, []);
+      const ClockDisplay = () => {
+        const [time, setTime] = useState(new Date().toLocaleTimeString());
+        useEffect(() => {
+          const t = setInterval(() => setTime(new Date().toLocaleTimeString()), 1000);
+          return () => clearInterval(t);
+        }, []);
+        return <span className="bg-[#0a0a0a] text-[#00ff41] px-3 py-0.5 font-mono shadow-inner border border-[#333]">{time}</span>;
+      };
   const projects = [
     { id: 'PROJ-01', title: '箱庭计划', sub: 'Hako-Niwa', desc: '基于舞台机器理论构建的模拟计算矩阵。维持微型现实稳定的最后算力源。', status: 'RUNNING', link: 'https://www.bilibili.com/video/BV1xx411c7mu' },
     { id: 'PROJ-02', title: '忒休斯计划', sub: 'Theseus', desc: '文明火种远征行动。建造巨型星舰逃离崩坏区。', status: 'READY', link: 'https://www.bilibili.com/video/BV1yx411c7gT' },
@@ -432,10 +435,10 @@ const App = () => {
 
                 <div className="mt-8 shrink-0">
                   <div className="text-[9px] font-black text-[#555] border-b border-[#333] pb-1 tracking-widest mb-3">External_Terminal</div>
-                  <a href="https://www.bilibili.com" target="_blank" rel="noopener noreferrer" className="link-button">
-                    <span>Link_01 (Bili)</span>
-                    <ExternalLink size={12} />
-                  </a>
+                  <a href="./src/index.html" rel="noopener noreferrer" className="link-button">
+                      <span>Link_01 (Bili)</span>
+                      <ExternalLink size={12} />
+                    </a>
                   <a href="https://www.bilibili.com" target="_blank" rel="noopener noreferrer" className="link-button">
                     <span>Link_02 (Bili)</span>
                     <ExternalLink size={12} />

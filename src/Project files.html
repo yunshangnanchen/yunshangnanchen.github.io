@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MULTI-PROJECT ARCHIVE | CLOUDHALL</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700&family=Noto+Sans+SC:wght@100;300;400;700&family=JetBrains+Mono:wght@100;400&display=swap');
+
+        :root {
+            --bg: #ffffff;
+            --fg: #000000;
+            --accent: #0066ff;
+            --muted: #f5f5f7;
+            --border: #e5e5e7;
+            --nav-bg: transparent;
+            --transition-speed: 0.8s;
+        }
+
+        /* --- 1. Theseus: Default Theme --- */
+        body.project-theseus {
+            --bg: #ffffff;
+            --fg: #000000;
+            --accent: #0066ff;
+            --muted: #f5f5f7;
+            --border: #e5e5e7;
+            --nav-bg: transparent;
+        }
+
+        /* --- 2. Atlantis: Deep Ocean Theme --- */
+        body.project-atlantis {
+            --bg: #001a2c;
+            --fg: #e0f2fe;
+            --accent: #0ea5e9;
+            --muted: rgba(14, 165, 233, 0.1);
+            --border: rgba(14, 165, 233, 0.2);
+            --nav-bg: rgba(0, 0, 0, 0.3);
+        }
+        body.project-atlantis .content-card {
+            border-radius: 2.5rem;
+            backdrop-filter: blur(15px);
+            background: linear-gradient(135deg, rgba(14,165,233,0.1) 0%, rgba(0,0,0,0.4) 100%);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+        }
+
+        /* --- 3. Genetic: Rhine Green Theme --- */
+        body.project-genetic {
+            --bg: #f9fbf9;
+            --fg: #1a2e1a;
+            --accent: #8db600; 
+            --muted: #edf2ed;
+            --border: #d1ddd1;
+            --nav-bg: rgba(255, 255, 255, 0.8);
+            font-family: 'JetBrains Mono', 'Noto Sans SC', monospace;
+        }
+        body.project-genetic .project-btn { background: var(--muted); padding: 6px 16px; border-radius: 4px; }
+        body.project-genetic .content-card {
+            border-style: dashed;
+            border-width: 1px;
+            background: white;
+            box-shadow: 10px 10px 0px var(--border);
+        }
+
+        /* Dark Mode overrides */
+        @media (prefers-color-scheme: dark) {
+            body.project-theseus {
+                --bg: #0a0a0a;
+                --fg: #ffffff;
+                --accent: #3399ff;
+                --muted: #1a1a1c;
+                --border: #2c2c2e;
+            }
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--fg);
+            font-family: 'Inter', 'Noto Sans SC', sans-serif;
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+        }
+
+        .layout-engine { transition: transform 0.6s ease, opacity 0.6s ease; }
+
+        canvas#scene {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .project-btn {
+            transition: all 0.3s ease;
+            position: relative;
+            opacity: 0.6;
+        }
+        .project-btn.active { color: var(--accent); opacity: 1 !important; font-weight: bold; }
+
+        .minimal-line {
+            height: 1px;
+            background: var(--border);
+            width: 100%;
+            transform-origin: left;
+            animation: line-grow 1.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+        }
+
+        @keyframes line-grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+        /* 差异化内容排版 */
+        #log-container { display: grid; gap: 1rem; }
+        body.project-genetic #log-container { grid-template-cols: repeat(auto-fill, minmax(300px, 1fr)); }
+        body.project-atlantis #log-container { max-width: 800px; margin-left: auto; margin-right: auto; }
+
+        ::selection { background: var(--accent); color: white; }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden project-theseus">
+    <canvas id="scene"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 px-6 py-8 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 transition-all duration-500">
+        <div class="flex flex-col">
+            <div class="text-xs font-bold tracking-tighter uppercase leading-none mb-4 mix-blend-difference">
+                Cloudhall <br> Initiative
+            </div>
+            <div class="flex space-x-4 text-[9px] uppercase tracking-widest font-bold">
+                <button onclick="switchProject('theseus')" class="project-btn active" id="btn-theseus">忒休斯计划</button>
+                <button onclick="switchProject('atlantis')" class="project-btn" id="btn-atlantis">亚特兰蒂斯计划</button>
+                <button onclick="switchProject('genetic')" class="project-btn" id="btn-genetic">基因工程计划</button>
+            </div>
+        </div>
+        
+        <div class="hidden md:flex space-x-12 text-[10px] uppercase tracking-[0.2em] font-medium mix-blend-difference">
+            <a href="#vision" class="hover:opacity-50">Vision</a>
+            <a href="#vessel" class="hover:opacity-50">Technical</a>
+            <a href="#log" class="hover:opacity-50">Archive</a>
+        </div>
+        
+        <div class="text-[10px] uppercase tracking-widest opacity-40 mix-blend-difference">
+            System: <span id="current-project-name">Theseus</span> / 2056
+        </div>
+    </nav>
+
+    <!-- Main Content Wrapper -->
+    <main class="layout-engine" id="main-content">
+        <!-- Hero Section -->
+        <section id="vision" class="min-h-screen flex flex-col justify-center px-6 md:px-12 pt-24">
+            <div class="minimal-line mb-12"></div>
+            <span class="text-[0.7rem] uppercase tracking-[0.3em] mb-4 block" style="color: var(--accent)" id="dynamic-tag">Classification: Top Secret</span>
+            <h1 class="font-extralight text-[4rem] md:text-[6.5rem] leading-[0.85] mb-12" id="dynamic-title">
+                人类火种<br><span class="font-bold">最后避难所</span>
+            </h1>
+            <div class="grid md:grid-cols-2 gap-12 max-w-5xl" id="hero-grid">
+                <p class="text-lg md:text-xl font-light leading-relaxed opacity-80" id="dynamic-desc">
+                    当“终焉恒星”的脉冲被首次捕获，人类文明进入了倒计时。忒休斯计划不是一场旅行，而是一次文明的物理迁移。
+                </p>
+                <div class="flex flex-col justify-end">
+                    <div class="text-[10px] uppercase tracking-widest opacity-40 mb-4 font-mono">Status: <span class="animate-pulse">Active</span></div>
+                    <div class="flex space-x-4">
+                        <button class="px-8 py-3 bg-[var(--fg)] text-[var(--bg)] text-[10px] uppercase font-bold tracking-widest hover:opacity-80 transition">资格申请</button>
+                        <button class="px-8 py-3 border border-[var(--border)] text-[10px] uppercase font-bold tracking-widest hover:bg-[var(--muted)] transition">机密访问</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Section -->
+        <section id="vessel" class="py-32 px-6 md:px-12">
+            <div class="minimal-line mb-16"></div>
+            <div class="grid md:grid-cols-3 gap-16" id="tech-grid">
+                <div id="tech-text-block">
+                    <span class="text-[0.7rem] uppercase tracking-[0.3em] mb-4 block" style="color: var(--accent)">01 / Engineering</span>
+                    <h2 class="text-2xl font-bold mb-6" id="tech-title">曲率引擎系统</h2>
+                    <p class="text-sm font-light leading-relaxed opacity-60" id="tech-desc">
+                        利用局部扭曲空间实现超光速位移，彻底摆脱传统推进剂的质量限制。
+                    </p>
+                </div>
+                <div class="md:col-span-2 content-card p-12 bg-[var(--muted)]/20 relative group overflow-hidden">
+                    <div class="h-64 flex items-center justify-center" id="visual-container">
+                        <svg viewBox="0 0 800 200" class="w-full opacity-60" id="dynamic-svg" style="color: var(--accent)">
+                            <!-- SVG content injected by JS -->
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Archive Section -->
+        <section id="log" class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-16" id="log-header">
+                <div>
+                    <span class="text-[0.7rem] uppercase tracking-[0.3em] mb-4 block" style="color: var(--accent)">02 / Chronicles</span>
+                    <h2 class="text-3xl font-bold tracking-tighter">计划历史日志</h2>
+                </div>
+            </div>
+            <div id="log-container">
+                <!-- Data injected by JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-24 px-6 md:px-12 border-t border-[var(--border)] opacity-30 text-[9px] uppercase tracking-[0.4em] font-bold">
+        Cloudhall Industries / Global Initiative / <span id="footer-tag">THESEUS</span>
+    </footer>
+
+    <script>
+        const projectData = {
+            theseus: {
+                name: "Theseus",
+                title: "人类火种<br><span class='font-bold'>最后避难所</span>",
+                desc: "忒休斯计划不是一场旅行，而是一次文明的物理迁移。我们正在建造的不只是一艘星舰，而是一个可以跨越千年的数字与物质双重箱庭。",
+                tag: "Classification: Top Secret / Deep Space",
+                techTitle: "曲率引擎系统",
+                techDesc: "由杨承宇总工主持研发。通过局部扭曲空间实现超光速位移，彻底摆脱传统推进剂的质量限制。",
+                logs: [
+                    { date: "2045.11.21", content: "发现圆周率π的收敛异常现象。物理常数稳定性报告。" },
+                    { date: "2055.01.01", content: "21号方舟计划启动。向“终焉”发射首枚探测器。" }
+                ]
+            },
+            atlantis: {
+                name: "Atlantis",
+                title: "深海沉默<br><span class='font-bold'>蔚蓝隔离区</span>",
+                desc: "若星空不可抵达，深海将是最后的温床。亚特兰蒂斯计划在海平面下4000米建立永续生态城，利用地热与水压作为天然屏蔽场。",
+                tag: "Classification: Restricted / Abyssal",
+                techTitle: "高压生态穹顶",
+                techDesc: "采用自修复纳米陶瓷材料，能够承受极限水压并维持内部类地气候循环。采用地热能作为永久动力源。",
+                logs: [
+                    { date: "2048.03.15", content: "马里亚纳基地一期工程竣工。水下生态系统初次闭环。" },
+                    { date: "2052.09.30", content: "成功实现水下闭环生态平衡。居民首次迁入。" }
+                ]
+            },
+            genetic: {
+                name: "Genetic",
+                title: "进化重塑<br><span class='font-bold'>永恒螺旋线</span>",
+                desc: "肉体是脆弱的。基因工程计划致力于通过修改人类基本性状，使其能够适应高辐射、低氧气的极端生存环境，实现文明的“生物性迁移”。",
+                tag: "Classification: Level 5 / Biological",
+                techTitle: "端粒修复矩阵",
+                techDesc: "利用病毒载体实时监控并修复细胞损耗，将人类平均寿命理论值提升至300年以上，增强对环境的耐受力。",
+                logs: [
+                    { date: "2049.07.08", content: "完成第12例人类基因改造临床。性状稳定，端粒活性维持在原始水平。" },
+                    { date: "2054.12.25", content: "“新人类”草案通过云幻科技董事会审批。演化分歧点确认。" },
+                    { date: "2056.02.14", content: "首次实现对高强度宇宙射线的生物性防御反馈。" }
+                ]
+            }
+        };
+
+        function switchProject(id) {
+            const data = projectData[id];
+            const main = document.getElementById('main-content');
+            
+            main.style.opacity = '0';
+            main.style.transform = 'translateY(10px)';
+
+            setTimeout(() => {
+                document.body.className = `antialiased overflow-x-hidden project-${id}`;
+                
+                document.getElementById('current-project-name').innerText = data.name;
+                document.getElementById('footer-tag').innerText = data.name.toUpperCase();
+                document.getElementById('dynamic-tag').innerText = data.tag;
+                document.getElementById('dynamic-title').innerHTML = data.title;
+                document.getElementById('dynamic-desc').innerText = data.desc;
+                document.getElementById('tech-title').innerText = data.techTitle;
+                document.getElementById('tech-desc').innerText = data.techDesc;
+
+                const logContainer = document.getElementById('log-container');
+                logContainer.innerHTML = data.logs.map(log => {
+                    const cardClass = id === 'genetic' ? 'border p-6 bg-white flex flex-col items-start gap-4' : 'border-b py-8 flex justify-between items-center px-6';
+                    return `
+                        <div class="group ${cardClass} border-[var(--border)] hover:bg-[var(--muted)] transition">
+                            <span class="font-mono text-[10px] opacity-40 tracking-widest">${log.date}</span>
+                            <span class="text-sm font-medium tracking-tight">${log.content}</span>
+                            <span class="text-[9px] uppercase border px-2 py-1 border-[var(--accent)] text-[var(--accent)] font-bold">Verified</span>
+                        </div>
+                    `;
+                }).join('');
+
+                // 调整排版网格
+                const techGrid = document.getElementById('tech-grid');
+                if (id === 'atlantis') {
+                    techGrid.classList.replace('md:grid-cols-3', 'md:grid-cols-1');
+                    techGrid.querySelector('div').classList.add('max-w-xl', 'mx-auto', 'text-center');
+                } else {
+                    techGrid.classList.replace('md:grid-cols-1', 'md:grid-cols-3');
+                    techGrid.querySelector('div').classList.remove('max-w-xl', 'mx-auto', 'text-center');
+                }
+
+                document.querySelectorAll('.project-btn').forEach(btn => btn.classList.remove('active'));
+                document.getElementById(`btn-${id}`).classList.add('active');
+
+                updateVisuals(id);
+                initParticles(id);
+
+                main.style.opacity = '1';
+                main.style.transform = 'translateY(0)';
+            }, 400);
+        }
+
+        function updateVisuals(id) {
+            const svg = document.getElementById('dynamic-svg');
+            if(id === 'theseus') {
+                svg.innerHTML = `<line x1="0" y1="100" x2="800" y2="100" stroke="currentColor" stroke-width="0.5" stroke-dasharray="4 4" />
+                                 <circle cx="400" cy="100" r="60" fill="none" stroke="currentColor" stroke-width="1" />
+                                 <path d="M100 100 L700 100" stroke="currentColor" stroke-width="2" />`;
+            } else if(id === 'atlantis') {
+                svg.innerHTML = `<path d="M100,100 Q400,-20 700,100 T100,100" fill="none" stroke="currentColor" stroke-width="0.5" />
+                                 <circle cx="400" cy="100" r="80" fill="none" stroke="currentColor" stroke-width="0.2" />
+                                 <path d="M200,100 C300,180 500,20 600,100" stroke="currentColor" stroke-width="2" fill="none" />`;
+            } else {
+                svg.innerHTML = `<path d="M200,50 L600,150 M200,150 L600,50" stroke="currentColor" stroke-width="1" stroke-dasharray="5 5" />
+                                 <rect x="380" y="80" width="40" height="40" fill="currentColor" opacity="0.1" />
+                                 <path d="M300,100 H500" stroke="currentColor" stroke-width="0.5" />`;
+            }
+        }
+
+        // --- Canvas Engine ---
+        const canvas = document.getElementById('scene');
+        const ctx = canvas.getContext('2d');
+        let width, height, points = [], mode = 'theseus', frame = 0;
+
+        function resize() {
+            width = window.innerWidth; height = window.innerHeight;
+            canvas.width = width; canvas.height = height;
+        }
+
+        class Point {
+            constructor() { this.reset(); }
+            reset() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+                this.size = Math.random() * 2;
+                this.phi = Math.random() * Math.PI * 2;
+            }
+            update() {
+                this.x += this.vx; this.y += this.vy;
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+        }
+
+        function initParticles(id) {
+            mode = id; points = [];
+            let count = id === 'atlantis' ? 100 : 60;
+            for(let i=0; i<count; i++) points.push(new Point());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent').trim();
+            ctx.fillStyle = accent;
+            ctx.strokeStyle = accent;
+            frame++;
+
+            if(mode === 'genetic') {
+                // DNA Double Helix Animation
+                const centerX = width / 2;
+                const spacing = 10;
+                ctx.globalAlpha = 0.4;
+                for(let i = 0; i < height; i += spacing) {
+                    const y = i;
+                    const shift = (i * 0.01) + (frame * 0.02);
+                    const x1 = centerX + Math.sin(shift) * 100;
+                    const x2 = centerX + Math.sin(shift + Math.PI) * 100;
+                    
+                    ctx.beginPath(); ctx.arc(x1, y, 2, 0, Math.PI * 2); ctx.fill();
+                    ctx.beginPath(); ctx.arc(x2, y, 2, 0, Math.PI * 2); ctx.fill();
+                    if(i % 40 === 0) {
+                        ctx.beginPath(); ctx.moveTo(x1, y); ctx.lineTo(x2, y);
+                        ctx.globalAlpha = 0.1; ctx.stroke(); ctx.globalAlpha = 0.4;
+                    }
+                }
+            } else {
+                points.forEach((p, i) => {
+                    p.update();
+                    if(mode === 'theseus') {
+                        ctx.globalAlpha = 0.5;
+                        ctx.beginPath(); ctx.arc(p.x, p.y, 1, 0, Math.PI * 2); ctx.fill();
+                        ctx.lineWidth = 0.15;
+                        for(let j=i+1; j<points.length; j++) {
+                            const d = Math.hypot(p.x - points[j].x, p.y - points[j].y);
+                            if(d < 180) { ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(points[j].x, points[j].y); ctx.stroke(); }
+                        }
+                    } else if(mode === 'atlantis') {
+                        ctx.globalAlpha = 0.1;
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y + Math.sin(frame * 0.01 + p.phi) * 20, p.size * 15, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                });
+            }
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+        switchProject('theseus');
+        animate();
+    </script>
+</body>
+</html>
