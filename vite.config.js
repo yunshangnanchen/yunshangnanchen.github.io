@@ -10,7 +10,7 @@ export default defineConfig({
    * 你的 GitHub Pages 地址是 https://yunshangnanchen.github.io/yunshangnanchen/
    * 所以 base 必须是 '/yunshangnanchen/'
    */
-  base: '/yunshangnanchen/', 
+  base: '/Project-Files_yunshang/', 
   
   plugins: [
     react(),
