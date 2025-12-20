@@ -42,8 +42,8 @@ const App = () => {
         // 创建新的favicon链接
         const link = document.createElement('link');
         link.rel = 'shortcut icon'; // 使用 shortcut icon 更兼容
-        link.type = 'image/jpeg';
-        link.href = 'https://www.diverse.direct/wp/wp-content/uploads/j_m_DVSP-0160.jpg';
+        link.type = 'image/png';
+        link.href = '/logo.png';
         document.head.appendChild(link);
       };
 
