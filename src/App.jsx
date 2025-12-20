@@ -447,7 +447,7 @@ const App = () => {
 
                 <div className="mt-8 shrink-0">
                   <div className="text-[9px] font-black text-[#555] border-b border-[#333] pb-1 tracking-widest mb-3">External_Terminal</div>
-                  <a href="./Project-Files_yunshang/files.html" rel="noopener noreferrer" className="link-button">
+                  <a href="./files.html" rel="noopener noreferrer" className="link-button">
                       <span>Link_Files (Bili)</span>
                       <ExternalLink size={12} />
                     </a>
