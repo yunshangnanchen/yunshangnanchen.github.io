@@ -43,7 +43,8 @@ const App = () => {
         const link = document.createElement('link');
         link.rel = 'shortcut icon'; // 使用 shortcut icon 更兼容
         link.type = 'image/png';
-        link.href = '/logo.png';
+        // 根据Vite的base配置调整favicon路径
+        link.href = import.meta.env.BASE_URL + 'logo.png';
         document.head.appendChild(link);
       };
 
@@ -435,7 +436,7 @@ const App = () => {
 
                 <div className="mt-8 shrink-0">
                   <div className="text-[9px] font-black text-[#555] border-b border-[#333] pb-1 tracking-widest mb-3">External_Terminal</div>
-                  <a href="./src/index.html" rel="noopener noreferrer" className="link-button">
+                  <a href="./files.html" rel="noopener noreferrer" className="link-button">
                       <span>Link_01 (Bili)</span>
                       <ExternalLink size={12} />
                     </a>
