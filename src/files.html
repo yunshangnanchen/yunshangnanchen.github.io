@@ -77,7 +77,6 @@
         }
         .minimal-line.active { transform: scaleX(1); }
 
-        /* 优化后的 Vision 切换动画 */
         .vision-fade {
             opacity: 0;
             transform: translateY(20px);
@@ -89,7 +88,6 @@
             transform: translateY(0);
         }
 
-        /* 标题文字逐个入场 */
         .title-reveal {
             display: inline-block;
             overflow: hidden;
@@ -130,7 +128,10 @@
         canvas#scene {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1; opacity: 0.6; pointer-events: none;
+            z-index: -1; 
+            opacity: 0.8; /* 稍微提高透明度 */
+            pointer-events: none;
+            display: block;
         }
 
         .project-btn { transition: all 0.3s ease; opacity: 0.4; cursor: pointer; }
@@ -188,7 +189,6 @@
     </style>
 </head>
 <body class="antialiased overflow-x-hidden project-theseus">
-    <!-- Preloader -->
     <div id="preloader">
         <div class="progress-bar-container">
             <div class="progress-bar-fill" id="bar"></div>
@@ -196,7 +196,6 @@
         <div class="loading-text">Initializing Systems</div>
     </div>
 
-    <!-- Modal -->
     <div id="custom-modal" onclick="closeModal()">
         <div class="modal-card" onclick="event.stopPropagation()">
             <div class="flex items-center justify-between mb-6">
@@ -212,17 +211,15 @@
         </div>
     </div>
 
-    <!-- Crash Overlay -->
     <div id="crash-overlay">
         <div class="text-6xl font-bold mb-4 tracking-tighter">CRITICAL FAILURE</div>
         <div class="text-xl mb-8 opacity-80 uppercase tracking-widest">链接崩溃 / 链接丢失 (404)</div>
         <div class="text-[10px] mb-12 opacity-70 max-w-md text-center">ERRORCODE: 0x000492_CONNECTION_TERMINATED</div>
-        <button onclick="rebootSystem()" class="px-8 py-4 border border-white text-white font-bold uppercase tracking-[0.3em] text-xs">REESTABLISH CONNECTION</button>
+        <button onclick="window.location.href='https://yunshangnanchen.github.io/Project-Files_yunshang/'" class="px-8 py-4 border border-white text-white font-bold uppercase tracking-[0.3em] text-xs">REESTABLISH CONNECTION</button>
     </div>
 
     <canvas id="scene"></canvas>
 
-    <!-- Navigation -->
     <nav id="top-nav" class="fixed top-0 w-full z-50 px-6 py-8 md:px-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 reveal delay-nav">
         <div class="flex flex-col">
             <div class="text-xs font-bold tracking-tighter uppercase mb-4 mix-blend-difference">Cloudhall <br> Initiative</div>
@@ -245,18 +242,13 @@
     </nav>
 
     <main id="main-content">
-        <!-- Hero Section -->
         <section id="vision" class="min-h-screen flex flex-col justify-center px-6 md:px-12 pt-24">
             <div class="minimal-line mb-12 reveal delay-1"></div>
             <div class="vision-content-wrapper min-h-[400px]">
                 <span class="text-[0.7rem] uppercase tracking-[0.3em] mb-4 block vision-fade delay-2" style="color: var(--accent)" id="dynamic-tag">Classification: Top Secret</span>
-                <h1 class="font-extralight text-[4rem] md:text-[6.5rem] leading-[0.85] mb-12 vision-fade delay-3" id="dynamic-title">
-                    <!-- Title injected via JS -->
-                </h1>
+                <h1 class="font-extralight text-[4rem] md:text-[6.5rem] leading-[0.85] mb-12 vision-fade delay-3" id="dynamic-title"></h1>
                 <div class="grid md:grid-cols-2 gap-12 max-w-5xl">
-                    <p class="text-lg md:text-xl font-light leading-relaxed opacity-80 vision-fade delay-4" id="dynamic-desc">
-                        <!-- Description injected via JS -->
-                    </p>
+                    <p class="text-lg md:text-xl font-light leading-relaxed opacity-80 vision-fade delay-4" id="dynamic-desc"></p>
                     <div class="flex flex-col justify-end vision-fade delay-5">
                         <div class="text-[10px] uppercase tracking-widest opacity-40 mb-4 font-mono">Status: <span class="animate-pulse">Active</span></div>
                         <div class="flex space-x-4">
@@ -268,7 +260,6 @@
             </div>
         </section>
 
-        <!-- Technical Section -->
         <section id="vessel" class="py-32 px-6 md:px-12">
             <div class="minimal-line mb-16 reveal"></div>
             <div class="flex items-center gap-4 mb-20 opacity-40 reveal">
@@ -276,13 +267,9 @@
                 <div class="h-[1px] flex-grow bg-current"></div>
                 <span class="text-[10px] uppercase tracking-widest" id="tech-header">曲率引擎系统</span>
             </div>
-            
-            <div id="tech-container">
-                <!-- Layout Injected Here -->
-            </div>
+            <div id="tech-container"></div>
         </section>
 
-        <!-- Archive Section -->
         <section id="log" class="py-32 px-6 md:px-12 max-w-7xl mx-auto">
             <div class="minimal-line mb-16 reveal"></div>
             <h2 class="text-3xl font-bold tracking-tighter mb-16 reveal">计划历史日志</h2>
@@ -296,7 +283,6 @@
 
     <script>
         let currentProjectId = 'theseus';
-
         const projectData = {
             theseus: {
                 name: "Theseus",
@@ -348,7 +334,6 @@
             }
         };
 
-        // 处理标题的逐字/逐行 HTML 生成
         function formatTitle(titleArray) {
             return titleArray.map((line, idx) => {
                 const isBold = idx === 1;
@@ -361,68 +346,12 @@
         function renderTechnical(id, data) {
             const container = document.getElementById('tech-container');
             container.innerHTML = "";
-            
             if (id === 'theseus') {
-                container.innerHTML = `
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                        <div class="space-y-4 reveal delay-1">
-                            <div class="stat-card text-right">
-                                <div class="text-[9px] opacity-40 uppercase mb-1">${data.specs[0].label}</div>
-                                <div class="text-xl font-bold">${data.specs[0].value}</div>
-                            </div>
-                            <div class="stat-card text-right">
-                                <div class="text-[9px] opacity-40 uppercase mb-1">物理版本</div>
-                                <div class="text-xl font-bold">V 2.0.4</div>
-                            </div>
-                        </div>
-                        <div class="reveal delay-2 flex justify-center">
-                            <svg viewBox="0 0 400 300" class="w-full h-auto max-h-[300px]" id="tech-svg-dynamic"></svg>
-                        </div>
-                        <div class="space-y-4 reveal delay-3">
-                            <div class="stat-card">
-                                <div class="text-[9px] opacity-40 uppercase mb-1">${data.specs[1].label}</div>
-                                <div class="text-xl font-bold">${data.specs[1].value}</div>
-                            </div>
-                            <div class="stat-card">
-                                <div class="text-[9px] opacity-40 uppercase mb-1">${data.specs[2].label}</div>
-                                <div class="text-xl font-bold">${data.specs[2].value}</div>
-                            </div>
-                        </div>
-                    </div>`;
+                container.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center"><div class="space-y-4 reveal delay-1"><div class="stat-card text-right"><div class="text-[9px] opacity-40 uppercase mb-1">${data.specs[0].label}</div><div class="text-xl font-bold">${data.specs[0].value}</div></div><div class="stat-card text-right"><div class="text-[9px] opacity-40 uppercase mb-1">物理版本</div><div class="text-xl font-bold">V 2.0.4</div></div></div><div class="reveal delay-2 flex justify-center"><svg viewBox="0 0 400 300" class="w-full h-auto max-h-[300px]" id="tech-svg-dynamic"></svg></div><div class="space-y-4 reveal delay-3"><div class="stat-card"><div class="text-[9px] opacity-40 uppercase mb-1">${data.specs[1].label}</div><div class="text-xl font-bold">${data.specs[1].value}</div></div><div class="stat-card"><div class="text-[9px] opacity-40 uppercase mb-1">${data.specs[2].label}</div><div class="text-xl font-bold">${data.specs[2].value}</div></div></div></div>`;
             } else if (id === 'atlantis') {
-                container.innerHTML = `
-                    <div class="flex flex-col gap-12">
-                        <div class="grid md:grid-cols-2 gap-16 items-center reveal delay-1">
-                            <svg viewBox="0 0 600 200" id="tech-svg-dynamic" class="w-full"></svg>
-                            <div class="border-l-4 border-[var(--accent)] pl-8 py-2">
-                                <h3 class="text-3xl font-light tracking-tight mb-4">超压物理屏障</h3>
-                                <p class="opacity-50 text-sm leading-relaxed">承受极限海床压力，将深海转化为最后的避风港。采用自修复纳米陶瓷材料。</p>
-                            </div>
-                        </div>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal delay-2">
-                            ${data.specs.map(s => `
-                                <div class="p-8 border border-[var(--border)] bg-[var(--muted)] flex flex-col justify-between h-40">
-                                    <div class="text-[10px] opacity-30 uppercase tracking-widest">${s.label}</div>
-                                    <div class="text-3xl font-bold tracking-tighter">${s.value}</div>
-                                </div>`).join('')}
-                        </div>
-                    </div>`;
+                container.innerHTML = `<div class="flex flex-col gap-12"><div class="grid md:grid-cols-2 gap-16 items-center reveal delay-1"><svg viewBox="0 0 600 200" id="tech-svg-dynamic" class="w-full"></svg><div class="border-l-4 border-[var(--accent)] pl-8 py-2"><h3 class="text-3xl font-light tracking-tight mb-4">超压物理屏障</h3><p class="opacity-50 text-sm leading-relaxed">承受极限海床压力，将深海转化为最后的避风港。采用自修复纳米陶瓷材料。</p></div></div><div class="grid grid-cols-1 md:grid-cols-3 gap-6 reveal delay-2">${data.specs.map(s => `<div class="p-8 border border-[var(--border)] bg-[var(--muted)] flex flex-col justify-between h-40"><div class="text-[10px] opacity-30 uppercase tracking-widest">${s.label}</div><div class="text-3xl font-bold tracking-tighter">${s.value}</div></div>`).join('')}</div></div>`;
             } else {
-                container.innerHTML = `
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="md:col-span-2 bg-[var(--muted)] p-12 border border-[var(--border)] reveal delay-1 flex flex-col justify-between">
-                            <svg viewBox="0 0 600 250" id="tech-svg-dynamic" class="w-full opacity-40"></svg>
-                            <div class="mt-8 text-[9px] font-mono opacity-50">ENCODING_SEQUENCE: [TAG_ACTIVE]</div>
-                        </div>
-                        <div class="flex flex-col justify-between space-y-8 reveal delay-2">
-                            ${data.specs.map(s => `
-                                <div class="relative group">
-                                    <div class="h-[1px] w-0 group-hover:w-full bg-[var(--accent)] transition-all duration-700 absolute -top-4"></div>
-                                    <div class="text-[10px] opacity-40 mb-2 uppercase tracking-widest">${s.label}</div>
-                                    <div class="text-4xl font-bold tracking-tighter">${s.value}</div>
-                                </div>`).join('')}
-                        </div>
-                    </div>`;
+                container.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-3 gap-8"><div class="md:col-span-2 bg-[var(--muted)] p-12 border border-[var(--border)] reveal delay-1 flex flex-col justify-between"><svg viewBox="0 0 600 250" id="tech-svg-dynamic" class="w-full opacity-40"></svg><div class="mt-8 text-[9px] font-mono opacity-50">ENCODING_SEQUENCE: [TAG_ACTIVE]</div></div><div class="flex flex-col justify-between space-y-8 reveal delay-2">${data.specs.map(s => `<div class="relative group"><div class="h-[1px] w-0 group-hover:w-full bg-[var(--accent)] transition-all duration-700 absolute -top-4"></div><div class="text-[10px] opacity-40 mb-2 uppercase tracking-widest">${s.label}</div><div class="text-4xl font-bold tracking-tighter">${s.value}</div></div>`).join('')}</div></div>`;
             }
             drawSVG(id);
         }
@@ -445,17 +374,14 @@
             if (id === currentProjectId) return;
             currentProjectId = id;
             const data = projectData[id];
-            
             const mainContent = document.getElementById('main-content');
             const visionFades = mainContent.querySelectorAll('.vision-fade');
             const techArchiveReveals = mainContent.querySelectorAll('#vessel .reveal, #log .reveal, .minimal-line');
             
-            // 1. 启动内容淡出
             visionFades.forEach(el => el.classList.remove('active'));
             techArchiveReveals.forEach(el => el.classList.remove('active'));
             mainContent.classList.remove('visible');
 
-            // 2. 数据更新（在淡出时静默进行）
             setTimeout(() => {
                 document.body.className = `antialiased overflow-x-hidden project-${id}`;
                 document.getElementById('current-project-name').innerText = data.name;
@@ -464,28 +390,16 @@
                 document.getElementById('dynamic-desc').innerText = data.desc;
                 document.getElementById('tech-header').innerText = data.techHeader;
                 document.getElementById('footer-tag').innerText = data.name.toUpperCase();
-                
                 renderTechnical(id, data);
-                document.getElementById('log-container').innerHTML = data.logs.map(log => `
-                    <div class="group border-b py-8 flex justify-between items-center px-6 border-[var(--border)] hover:bg-[var(--muted)] transition reveal">
-                        <span class="font-mono text-[10px] opacity-40">${log.date}</span>
-                        <span class="text-sm font-medium">${log.content}</span>
-                        <span class="text-[9px] uppercase border px-2 py-1 border-[var(--accent)] text-[var(--accent)]">Verified</span>
-                    </div>`).join('');
-
+                document.getElementById('log-container').innerHTML = data.logs.map(log => `<div class="group border-b py-8 flex justify-between items-center px-6 border-[var(--border)] hover:bg-[var(--muted)] transition reveal"><span class="font-mono text-[10px] opacity-40">${log.date}</span><span class="text-sm font-medium">${log.content}</span><span class="text-[9px] uppercase border px-2 py-1 border-[var(--accent)] text-[var(--accent)]">Verified</span></div>`).join('');
                 document.querySelectorAll('.project-btn').forEach(btn => btn.classList.remove('active'));
                 document.getElementById(`btn-${id}`).classList.add('active');
-
-                // 3. 重新入场
                 mainContent.classList.add('visible');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
-                
-                // 触发 Vision 动画
                 setTimeout(() => {
                     visionFades.forEach(el => el.classList.add('active'));
                     initScrollReveals();
                 }, 100);
-
             }, 700); 
         }
 
@@ -501,26 +415,18 @@
             modal.classList.remove('show');
             setTimeout(() => modal.style.display = 'none', 300);
         }
-        
-        function handleApplication() {
-            if (currentProjectId === 'theseus') {
-                showModal("ACCESS DENIED", "忒休斯计划目前尚未开放申请。", "Status: 403 Forbidden");
-            } else {
-                triggerCrash();
-            }
-        }
-        function handleSecretAccess() { 
-            showModal("ENCRYPTED TUNNEL REQUIRED", "检测到非安全访问。请使用云幻加密隧道进行机密内容解密。", "Error: SEC_UNTRUSTED_NODE"); 
-        }
-
+        function handleApplication() { if (currentProjectId === 'theseus') showModal("ACCESS DENIED", "忒休斯计划目前尚未开放申请。", "Status: 403 Forbidden"); else triggerCrash(); }
+        function handleSecretAccess() { showModal("ENCRYPTED TUNNEL REQUIRED", "检测到非安全访问。请使用云幻加密隧道进行机密内容解密。", "Error: SEC_UNTRUSTED_NODE"); }
         function triggerCrash() {
             const overlay = document.getElementById('crash-overlay');
             overlay.style.display = 'flex'; overlay.classList.add('crashing');
             document.getElementById('main-content').style.visibility = 'hidden';
-            setTimeout(() => overlay.classList.remove('crashing'), 3000);
+            setTimeout(() => overlay.classList.remove('crashing'), 300);
         }
         function rebootSystem() {
-            window.location.href = "http://yunshangnanchen.github.io/Project-Files_yunshang/";
+            document.getElementById('crash-overlay').style.display = 'none';
+            document.getElementById('main-content').style.visibility = 'visible';
+            switchProject('theseus');
         }
 
         function initScrollReveals() {
@@ -530,21 +436,76 @@
             document.querySelectorAll('#main-content .reveal, #main-content .minimal-line, footer').forEach(el => obs.observe(el));
         }
 
+        /* --- Enhanced Particle System --- */
         const canvas = document.getElementById('scene');
         const ctx = canvas.getContext('2d');
         let pts = [];
-        function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+        let mouse = { x: null, y: null };
+        
+        function resize() { 
+            canvas.width = window.innerWidth; 
+            canvas.height = window.innerHeight; 
+            if (pts.length === 0) createPoints();
+        }
+
+        function createPoints() {
+            pts = [];
+            const count = 180; // 增加点位数量 (原为 60)
+            for(let i=0; i<count; i++) {
+                pts.push({
+                    x: Math.random() * window.innerWidth, 
+                    y: Math.random() * window.innerHeight, 
+                    vx: (Math.random() - 0.5) * 0.6, 
+                    vy: (Math.random() - 0.5) * 0.6,
+                    r: Math.random() * 2 + 1.5 // 增加粒子半径 (原为 1.2)
+                });
+            }
+        }
+
         function animate() {
+            const accent = getComputedStyle(document.body).getPropertyValue('--accent').trim() || '#0066ff';
+            
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            const accent = getComputedStyle(document.documentElement).getPropertyValue('--accent');
-            ctx.strokeStyle = accent; ctx.fillStyle = accent;
+            ctx.strokeStyle = accent; 
+            ctx.fillStyle = accent;
+
             pts.forEach((p, i) => {
+                // 粒子移动
                 p.x += p.vx; p.y += p.vy;
-                if(p.x<0||p.x>canvas.width) p.vx*=-1; if(p.y<0||p.y>canvas.height) p.vy*=-1;
-                ctx.globalAlpha = 0.2; ctx.beginPath(); ctx.arc(p.x, p.y, 1.5, 0, Math.PI*2); ctx.fill();
+                
+                // 边界检测
+                if(p.x < 0 || p.x > canvas.width) p.vx *= -1; 
+                if(p.y < 0 || p.y > canvas.height) p.vy *= -1;
+                
+                // 绘制粒子
+                ctx.globalAlpha = 0.5; 
+                ctx.beginPath(); 
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI*2); 
+                ctx.fill();
+
+                // 鼠标交互感应
+                if (mouse.x !== null) {
+                    let md = Math.hypot(p.x - mouse.x, p.y - mouse.y);
+                    if (md < 150) {
+                        ctx.globalAlpha = (1 - md/150) * 0.4;
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(mouse.x, mouse.y);
+                        ctx.stroke();
+                    }
+                }
+
+                // 连线逻辑
                 for(let j=i+1; j<pts.length; j++){
-                    let d = Math.hypot(p.x-pts[j].x, p.y-pts[j].y);
-                    if(d<150){ ctx.globalAlpha=(1-d/150)*0.2; ctx.beginPath(); ctx.moveTo(p.x,p.y); ctx.lineTo(pts[j].x,pts[j].y); ctx.stroke(); }
+                    let d = Math.hypot(p.x - pts[j].x, p.y - pts[j].y);
+                    if(d < 150){ 
+                        ctx.globalAlpha = (1 - d/150) * 0.25; // 增加连线透明度 (原为 0.15)
+                        ctx.lineWidth = 0.8; // 增加线宽 (原为 0.5)
+                        ctx.beginPath(); 
+                        ctx.moveTo(p.x, p.y); 
+                        ctx.lineTo(pts[j].x, pts[j].y); 
+                        ctx.stroke(); 
+                    }
                 }
             });
             requestAnimationFrame(animate);
@@ -556,22 +517,29 @@
             setTimeout(() => {
                 document.getElementById('preloader').classList.add('fade-out');
                 document.getElementById('main-content').classList.add('visible');
-                
-                // 初次加载初始化
                 document.getElementById('dynamic-title').innerHTML = formatTitle(projectData.theseus.title);
                 document.getElementById('dynamic-desc').innerText = projectData.theseus.desc;
                 renderTechnical('theseus', projectData.theseus);
-                
                 setTimeout(() => {
                     document.querySelectorAll('.reveal, .minimal-line, .vision-fade').forEach(el => el.classList.add('active'));
                 }, 100);
-
                 initScrollReveals();
-                for(let i=0; i<50; i++) pts.push({x:Math.random()*window.innerWidth, y:Math.random()*window.innerHeight, vx:(Math.random()-0.5)*0.5, vy:(Math.random()-0.5)*0.5});
-                resize(); animate();
+                
+                resize();
+                createPoints();
+                animate();
             }, 2500);
         };
-        window.onresize = resize;
+        
+        window.addEventListener('resize', resize);
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+        window.addEventListener('mouseleave', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
     </script>
 </body>
 </html>

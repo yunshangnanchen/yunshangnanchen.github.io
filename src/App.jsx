@@ -39,13 +39,24 @@ const App = () => {
           }
         });
         
-        // 创建新的favicon链接
-        const link = document.createElement('link');
-        link.rel = 'shortcut icon'; // 使用 shortcut icon 更兼容
-        link.type = 'image/png';
-        // 根据Vite的base配置调整favicon路径
-        link.href = import.meta.env.BASE_URL + 'logo.png';
-        document.head.appendChild(link);
+        // 创建多种尺寸的favicon链接
+        const sizes = ['16x16', '32x32', '48x48'];
+        sizes.forEach(size => {
+          const link = document.createElement('link');
+          link.rel = 'icon';
+          link.type = 'image/png';
+          link.sizes = size;
+          // 使用GitHub原始链接作为favicon
+          link.href = 'https://raw.githubusercontent.com/yunshangnanchen/Project-Files_yunshang/refs/heads/main/public/logo.png';
+          document.head.appendChild(link);
+        });
+        
+        // 添加苹果触控图标
+        const appleTouchIcon = document.createElement('link');
+        appleTouchIcon.rel = 'apple-touch-icon';
+        appleTouchIcon.sizes = '180x180';
+        appleTouchIcon.href = 'https://raw.githubusercontent.com/yunshangnanchen/Project-Files_yunshang/refs/heads/main/public/logo.png';
+        document.head.appendChild(appleTouchIcon);
       };
 
       // 调用设置favicon的函数
@@ -436,7 +447,7 @@ const App = () => {
 
                 <div className="mt-8 shrink-0">
                   <div className="text-[9px] font-black text-[#555] border-b border-[#333] pb-1 tracking-widest mb-3">External_Terminal</div>
-                  <a href="./files.html" rel="noopener noreferrer" className="link-button">
+                  <a href="./src/files.html" rel="noopener noreferrer" className="link-button">
                       <span>Link_01 (Bili)</span>
                       <ExternalLink size={12} />
                     </a>
