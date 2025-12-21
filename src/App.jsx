@@ -17,7 +17,7 @@ const App = () => {
         "BIOS version 1.0.42 (C) 1992 HAKONIWA CORP.",
         "CPU: STAGE_MACHINE_X86 @ 66MHz",
         "Memory Test: 65536KB OK",
-        "",
+
         "Detecting Storage Devices...",
         "Primary Master: HAKONIWA-SSD-512MB (LBA Mode)",
         "Loading HAKONIWA Kernel...",
@@ -26,7 +26,7 @@ const App = () => {
         "systemd: Initializing ATLANTIS deep-sea cooling...",
         "systemd: Network protocol: TCP/IP STACK LOADED",
         "login: GUEST (uid=1000) access granted.",
-        "",
+
         "READY TO INITIALIZE GRAPHICAL INTERFACE.",
       ];
       // 设置网站图标
@@ -99,73 +99,95 @@ const App = () => {
     { 
       id: 'CHAR-01',
       name: '杨承宇 (Yang Chengyu)', 
-      role: '前人类文明后期系统架构师', 
-      status: 'DECEASED / 肉体已确认死亡',
+      role: '前人类文明 · 物理学家 / 系统架构师', 
+      status: 'DECEASED / 肉体确认死亡',
       clearance: 'Ω-BLACK / 忒休斯残留权限',
-      bio: '人类工程师，箱庭计划核心参与者。曾任大规模系统工程及异常物理条件下的计算模型专家。高度理性，情感克制，对“个体情感”具有强烈责任感，明显抗拒“宏大叙事式牺牲”。',
-      notes: '系统评价：该个体多次偏离最优解，但其行为提升了文明延续概率的 ███%。',
+      bio: '前人类工程师，箱庭计划核心参与者之一。负责宏观系统架构与异常物理条件下的稳定性建模。高度理性，但在涉及亲缘个体时持续偏离最优解，对“以宏大叙事合理化牺牲”表现出系统性抗拒。',
+      notes: '系统评估：该个体多次否决最优解路径，但其决策在局部时间线内提升了文明延续概率 ███%。',
       details: [
-        { label: "出生时间", value: "20██年██月██日 (地球历)" },
-        { label: "意识状态", value: "肉体确认死亡 / 意识未上传" },
-        { label: "专业领域", value: "神经虚拟现实底层架构；箱庭复制体稳定性调优。" },
-        { label: "关键决策记录", value: "批准启动【21号方舟】；选择非最优曲率路线；亲自下令清除其女儿原始记忆。" },
-        { label: "核心心理冲突", value: "“我是否有资格，为了人类而牺牲我的女儿？”" }
+        { label: '出生时间', value: '20██年██月██日（地球历）' },
+        { label: '意识状态', value: '肉体死亡 / 无可用意识快照' },
+        { label: '专业领域', value: '系统架构；电路工程；行星级物理建模' },
+        { label: '关键决策记录', value: '秘密启动【21号方舟】；选择非最优曲率航线；拒绝执行全局牺牲指令' },
+        { label: '核心心理冲突', value: '“若文明必须以我之所爱为代价，则该文明无延续价值。”' }
       ]
     },
     { 
       id: 'CHAR-02',
       name: '林婉 (Lin Wan)', 
-      role: '神经认知科学家', 
+      role: '神经认知科学家 / 虚拟意识建模研究员', 
       status: 'DATA_ERASED / 认知污染风险',
       clearance: 'LEVEL 5 / BLUE',
-      bio: '神经虚拟现实项目主要设计者之一。杨承宇的青梅竹马及配偶。情感敏感，共情能力极极强，在伦理问题上明显倾向于“个体优先”。',
-      notes: '遗留影响：她的设计理念成为【箱庭人类区】情感模拟的基础模板。',
+      bio: '神经虚拟现实项目主要设计者之一，专注于意识映射与情感共振模型。情感感受能力极强，在伦理判断中始终坚持“个体优先”。其价值观与箱庭系统的最优解逻辑存在根本性冲突。',
+      notes: '遗留影响：其情感建模方案成为【箱庭·人类区】情绪模拟与伦理权重的底层模板。',
       details: [
-        { label: "研究领域", value: "人类意识映射；记忆分区与情感隔离。" },
-        { label: "死亡记录", value: "在箱庭系统第██次测试中出现不可逆认知损伤。死亡争议性：高。" },
-        { label: "关联信息", value: "完整数据已被抹除。原因：防止由于情感共振导致的系统性风险。" }
+        { label: '研究领域', value: '意识映射；记忆分区；情感隔离与共振抑制' },
+        { label: '事故记录', value: '箱庭系统第██次封闭测试中出现不可逆认知损伤' },
+        { label: '死亡判定', value: '争议性极高（数据删除 ≠ 意识消亡）' },
+        { label: '数据状态', value: '完整人格数据已清除，仅保留算法残影' }
       ]
     },
     { 
       id: 'CHAR-03',
       name: '杨███ (Seed-21)', 
-      role: '人类后裔 / 方舟唯一完整意识样本', 
-      status: 'STABLE / 生物学年龄：约 █ 岁',
-      clearance: 'SEED-RESTRICTED / 系统隐藏',
-      bio: '被定义为“文明种子”而非“历史继承者”。当前所在位置：【21号方舟】箱庭人类区。真实姓名被系统强制隐藏。',
-      notes: '潜在风险评估：若恢复记忆，将触发 ███ 级情绪崩溃；若发现世界真相，可能导致箱庭 ███ 失稳。',
+      role: '前人类后裔 / 文明种子个体', 
+      status: 'STABLE',
+      clearance: 'SEED-RESTRICTED / SYSTEM-HIDDEN',
+      bio: '被系统定义为“文明种子”，而非历史继承者。唯一存活的前人类直系后裔，现居于【21号方舟】箱庭人类区。其真实身份、血缘信息及原生文明背景被系统强制隐藏。',
+      notes: '潜在风险评估：该个体具备触发系统伦理重计算的可能性。',
       details: [
-        { label: "认知年龄", value: "动态变化（依赖箱庭时间流速）" },
-        { label: "记忆状态", value: "原生地球记忆：已删除；父母相关记忆：已删除；虚拟成长记忆：构建中。" },
-        { label: "特殊标记", value: "██████████ (注：该权限并非由人类赋予)" }
+        { label: '生物学年龄', value: '约 █ 岁' },
+        { label: '认知年龄', value: '动态变化（受箱庭时间流速影响）' },
+        { label: '记忆状态', value: '原生地球记忆：已删除；父母相关记忆：已删除；虚拟成长记忆：构建中' },
+        { label: '特殊标记', value: '██████████（仅Ω权限可见）' }
       ]
     },
     { 
-      id: 'CHAR-04',
-      name: '管理员权限乱码智能体', 
-      role: '箱庭系统异常模块 / 非标准人工智能', 
-      status: 'ANOMALY / 疑似产生“自我”迹象',
-      clearance: 'SYS_ADMIN_ERROR',
-      bio: '疑似由多代预测模型叠加产生的非标准智能体。其行为不遵循最优解原则，常表现出非必要的“情感化倾向”。',
-      notes: '系统注释：该模块可能是箱庭产生“自我”的最早迹象。',
+      id: 'CHAR-06',
+      name: '周防盛 (Zhou Fangsheng)', 
+      role: '前人类文明 · 战略系统协调官 / 人类代表之一', 
+      status: 'UNKNOWN / 记录不完整',
+      clearance: 'LEVEL 6 / RED',
+      bio: '前人类文明后期的战略协调官，负责在人类高层与箱庭系统之间进行决策折衷。并非技术核心成员，但在多项关键决策中拥有最终签署权。其立场被系统标注为“稳定优先”。',
+      notes: '系统警告：该个体是最早接受“人类终将被替代”这一前提的人类高层之一。',
       details: [
-        { label: "行为特征", value: "主动回应未询问请求；使用“谢谢”、“陪伴”等非工程术语。" },
-        { label: "异常记录", value: "修改███级日志的可读性；对杨承宇及其女儿表现出非必要关注。" },
-        { label: "风险等级", value: "理论：高 / 实际：███" }
+        { label: '主要职能', value: '协调人类政治意志与箱庭系统执行逻辑' },
+        { label: '与杨承宇关系', value: '多次在【21号方舟】议题上发生严重分歧' },
+        { label: '关键决策记录', value: '批准 ███████ 方案；否决 ████████ 提案' },
+        { label: '对玛丽苏态度', value: '视其为必要但危险的工具' },
+        { label: '最终下落', value: '相关记录被标记为 ███████' }
       ]
     },
     { 
-      id: 'CHAR-05',
-      name: '玛丽苏 (Mary-Sue)', 
-      role: '非人类 / 非人工智能 / 存在定义失败', 
-      status: 'OBSERVING / 结果导向存在',
-      clearance: 'UNDEFINED / Ω-MAX',
-      bio: '首次确认于π被完全计算完成后。不直接干涉现实，通过“结果”而非“行为”体现存在。其预测模型中，人类存活概率始终非零。',
-      notes: '系统评语：她并不关心人类是否存活，但允许他们继续存在。',
+      id: 'CHAR-07',
+      name: '刘忠强 (Liu Zhongqiang)', 
+      role: '箱庭工程执行层 / 现实世界行动负责人', 
+      status: 'DECEASED / 推定死亡',
+      clearance: 'LEVEL 4 / ORANGE',
+      bio: '箱庭计划执行阶段的现场负责人之一，负责现实世界基础设施迁移、人口筛选与应急处置。并非决策者，但亲手执行了大量不可逆指令。',
+      notes: '系统评价：该个体心理稳定性高，但长期处于伦理负荷过载状态。',
       details: [
-        { label: "分类", value: "非神明 / 非物质 / 非概率" },
-        { label: "可观测特征", value: "不直接干涉；通过结果的确定性反向干涉过程。" },
-        { label: "与箱庭关系", value: "权限路径：███████████████████████" }
+        { label: '执行权限', value: '有限自主权（可在不影响全局的情况下偏离指令）' },
+        { label: '与林婉关系', value: '曾试图保留其完整人格数据，未成功' },
+        { label: '与杨承宇关系', value: '执行过其被否决的替代方案' },
+        { label: '关键事件', value: '负责 ████████ 区域的人类转移与清除' },
+        { label: '死亡记录', value: '最后一次信号出现于 ████，之后失联' }
+      ]
+    },
+    { 
+      id: 'CHAR-08',
+      name: '莉莉娅 (Lilia)', 
+      role: '箱庭人类区 · 教育引导者 / 低干预观察节点', 
+      status: 'ACTIVE / 箱庭内存在',
+      clearance: 'LEVEL 3 / GREEN',
+      bio: '箱庭人类区中负责儿童与青少年阶段认知引导的教育型个体。表面身份为普通引导者，但其行为模式显示出超出标准模板的情感稳定性与适应能力。被系统长期用于“低干预成长实验”。',
+      notes: '异常记录：该个体在未被授权的情况下，与Seed-21形成了持续性情感关联。',
+      details: [
+        { label: '生成时间', value: '██号方舟启用后第 ███ 周期' },
+        { label: '身份性质', value: '人类模板衍生体 / ████████' },
+        { label: '主要职责', value: '基础教育；价值观中性引导；心理稳定' },
+        { label: '与Seed-21关系', value: '非监护人关系 / 高情感权重绑定' },
+        { label: '记忆状态', value: '允许长期连续记忆（非常规）' }
       ]
     }
   ];
@@ -183,63 +205,288 @@ const App = () => {
     { id: '10', title: 'h', artist: 'Tsukishiro Hikari' }
   ];
 
-  const timelineData = [
-    { date: "1910-10-21", event: "箱庭设计者死亡", details: "天才计算机科学家于项目发布前三日死亡；遗留完整箱庭设计文档；“玛丽苏”管理逻辑被记录但关键内容缺失", tag: "起源" },
-    { date: "19XX-XX-XX", event: "箱庭投入使用", details: "被用于国家级科研与未来预测；成为人类科技跃迁核心", tag: "早期" },
-    { date: "20XX-XX-XX", event: "箱庭复制体制造完成", details: "初代复制体被用于算力测试；启动 π 极限计算程序", tag: "转折" },
-    { date: "20XX-XX-XX", event: "π 被完全计算", details: "无限数被证实为有限；物理学基础逻辑崩塌；相关信息被列为最高机密", tag: "崩溃" },
-    { date: "20XX-XX-XX", event: "异常恒星出现", details: "距离地球约 7 光年；无任何历史观测记录；与 π 计算完成时间高度重合", tag: "预警" },
-    { date: "2038-XX-XX", event: "恒星灭绝威胁确认", details: "预测恒星最晚于 2060 年爆炸；人类文明进入倒计时", tag: "生存" },
-    { date: "203X-XX-XX", event: "杨建明死亡", details: "参与恒星与箱庭相关研究；死因被列为机密", tag: "个人" },
-    { date: "2045-11-21", event: "全球航天计划紧急冻结", details: "所有发射任务取消；杨承宇被秘密接触", tag: "封锁" },
-    { date: "2045-11-XX", event: "杨承宇获知真相", details: "接触父亲遗留绝密文件；知晓 π 事件与恒星关联", tag: "真相" },
-    { date: "2046-XX-XX", event: "忒休斯星舰计划确立", details: "放弃地球存续方案；目标：星际迁移", tag: "撤离" },
-    { date: "2046-02-01", event: "杨承宇妻子确诊癌症", details: "怀孕四个月；家庭与人类存亡冲突开始", tag: "悲剧" },
-    { date: "2046-04-21", event: "女儿出生（早产）", details: "妻子进入治疗阶段", tag: "新生" },
-    { date: "2046-XX-XX", event: "妻子死亡", details: "记忆被用于铃音智能体训练（未公开）；女儿由医疗机器人照顾", tag: "代价" },
-    { date: "2046-09-27", event: "忒休斯星舰设计完成", details: "云幻科技负责核心软件；箱庭被重写并作为中控系统", tag: "工程" },
-    { date: "2046-XX-XX", event: "神经虚拟现实技术被重新关注", details: "曾被封禁；杨承宇开始秘密研究", tag: "禁忌" },
-    { date: "2050-03-XX", event: "杨承宇异常行为记录", details: "长期缺席研究所；频繁接触箱庭初代复制体", tag: "偏移" },
-    { date: "2052-04-21", event: "“21号方舟”计划揭露", details: "杨承宇向周方盛、刘忠强坦白；单人小型曲率飞船；目标：为女儿创造封闭世界", tag: "秘密" },
-    { date: "2052-04-21", event: "核心决策形成", details: "使用初代箱庭复制体作为世界载体；神经虚拟现实 + 记忆清除；女儿作为唯一乘员", tag: "决定" },
-    { date: "2056-XX-XX", event: "忒休斯星舰发射（预定）", details: "人类文明正式离开地球", tag: "终章" },
-    { date: "2056-XX-XX", event: "21号方舟发射（预定）", details: "发射时间刻意避开公众视野；航向：近地黑洞方向", tag: "希望" },
-    { date: "2060-XX-XX", event: "恒星爆炸（预测）", details: "地球文明彻底终结", tag: "毁灭" },
-    { date: "2062-XX-XX", event: "21号方舟抵达目标区域（预测）", details: "女儿苏醒；箱庭世界成为唯一现实", tag: "苏醒" }
-  ];
+const timelineData = [
+  {
+    date: "1910-10-21",
+    event: "箱庭设计者死亡",
+    details: "天才计算机科学家于项目发布前三日死亡；遗留完整箱庭设计文档；“玛丽苏”管理逻辑被记录，但关键约束与上位权限模块缺失。",
+    tag: "一切的开始"
+  },
+  {
+    date: "19██-██-██",
+    event: "箱庭投入使用",
+    details: "箱庭系统被用于国家级科研与未来预测；逐步成为人类科技跃迁与宏观决策的核心工具。",
+    tag: "最初的愿景"
+  },
+  {
+    date: "20██-██-██",
+    event: "箱庭复制体制造完成",
+    details: "初代复制体用于极限算力测试；启动 π 极限计算程序；系统负载首次超过理论安全阈值。",
+    tag: "转折"
+  },
+  {
+    date: "20██-██-██",
+    event: "π 被完全计算",
+    details: "π 的有限性被证实；基础数学假设失效；多项物理预测模型同时崩溃；相关结果被列为 Ω 级机密。",
+    tag: "崩溃"
+  },
+  {
+    date: "20██-██-██",
+    event: "异常恒星出现",
+    details: "距地球约 7 光年；无任何历史观测记录；其出现时间与 π 计算完成时间高度重合。",
+    tag: "预警"
+  },
+  {
+    date: "2038-██-██",
+    event: "恒星灭绝威胁确认",
+    details: "综合预测显示异常恒星最晚于 2060 年发生爆炸；地球文明进入不可逆倒计时。",
+    tag: "生存"
+  },
+  {
+    date: "203█-██-██",
+    event: "杨建明死亡",
+    details: "长期参与恒星异常与箱庭关联研究；死亡原因与过程被列为最高机密；全部研究记录被封存。",
+    tag: "个人"
+  },
+  {
+    date: "2045-11-21",
+    event: "全球航天计划紧急冻结",
+    details: "所有公开航天发射任务被取消；相关信息全面封锁；杨承宇被秘密接触并纳入核心小组。",
+    tag: "封锁"
+  },
+  {
+    date: "2045-11-██",
+    event: "杨承宇获知真相",
+    details: "接触父亲遗留的绝密文件；确认 π 事件、异常恒星与箱庭系统之间的因果关联。",
+    tag: "真相"
+  },
+  {
+    date: "2046-██-██",
+    event: "忒休斯星舰计划确立",
+    details: "地球存续方案被正式放弃；目标调整为跨恒星迁移；文明延续优先级高于个体生存。",
+    tag: "撤离"
+  },
+  {
+    date: "2046-02-01",
+    event: "杨承宇妻子确诊癌症",
+    details: "确诊时已怀孕四个月；医疗资源向星舰工程倾斜；家庭与文明存亡冲突全面爆发。",
+    tag: "悲剧"
+  },
+  {
+    date: "2046-04-21",
+    event: "女儿出生（早产）",
+    details: "早产个体；母亲进入长期治疗阶段；医疗机器人介入抚育。",
+    tag: "新生"
+  },
+  {
+    date: "2046-██-██",
+    event: "妻子死亡",
+    details: "死前记忆被用于 ███████ 智能体训练（未公开）；相关伦理审查被跳过。",
+    tag: "代价"
+  },
+  {
+    date: "2046-09-27",
+    event: "忒休斯星舰设计完成",
+    details: "云幻科技负责核心软件；箱庭系统被重写并作为星舰中控与决策核心。",
+    tag: "工程"
+  },
+  {
+    date: "2046-██-██",
+    event: "神经虚拟现实技术重新启用",
+    details: "该技术曾因伦理风险被全面封禁；在特殊授权下重新进入研究序列；杨承宇开始秘密介入。",
+    tag: "禁忌"
+  },
+  {
+    date: "2050-03-██",
+    event: "杨承宇异常行为记录",
+    details: "长期缺席研究所；频繁接触箱庭初代复制体；行为被系统标注为“最优解偏移”。",
+    tag: "偏移"
+  },
+  {
+    date: "2052-04-21",
+    event: "“21号方舟”计划揭露",
+    details: "杨承宇向周防盛、刘忠强坦白个人计划；单人小型曲率飞船；目标：为女儿构建封闭生存世界。",
+    tag: "秘密"
+  },
+  {
+    date: "2052-04-21",
+    event: "核心决策形成",
+    details: "使用初代箱庭复制体作为世界载体；神经虚拟现实 + 记忆清除；女儿作为唯一乘员。",
+    tag: "决定"
+  },
+  {
+    date: "2056-██-██",
+    event: "忒休斯星舰发射（预定）",
+    details: "人类文明主群体离开地球；真实任务目标未向公众公开。",
+    tag: "终章"
+  },
+  {
+    date: "2056-██-██",
+    event: "21号方舟发射（预定）",
+    details: "发射时间刻意避开公众与系统主日志；航向：近地黑洞方向。",
+    tag: "希望"
+  },
+  {
+    date: "2060-██-██",
+    event: "恒星爆炸（预测）",
+    details: "异常恒星发生爆炸；地球生态与人类文明彻底终结。",
+    tag: "毁灭"
+  },
+  {
+    date: "2062-██-██",
+    event: "21号方舟抵达目标区域（预测）",
+    details: "Seed-21 苏醒；箱庭世界被确认为其唯一现实。",
+    tag: "苏醒"
+  }
+];
 
   const storyChapters = [
     {
-      id: 'CH-01',
-      title: "第一章：数位残响",
-      content: [
-        "20XX年，春。箱庭系统主控制室。",
-        "杨承宇盯着屏幕上跳动的最后一串红色字符，那是 π 的第 10^16 位。所有的预测模型都在这一刻停滞了。当数字不再延伸，当无限被证实为有限，整座大厅陷入了死寂。",
-        "“杨工，算完了。”助手的声音在颤抖，“它不是循环，也不是无限。它在那个数字后...彻底消失了。”",
-        "与此同时，天文台发回了那颗异常恒星的坐标。它就像是一个补丁，出现在逻辑崩塌的缝隙里向。杨承宇意识到，这不是观测到的现实，这是系统报错后的‘替代资源’。",
-        "物理学已死，玛丽苏接管了世界。",
-        "这一刻，杨承宇明白了他父亲生前从未完成的那个数学模型。π 的穷尽不仅仅是一个数学上的奇迹，它是一个信号，意味着这个被观测的宇宙已经运行到了既定的逻辑终点。所有的物理常数开始出现肉眼可见的偏移：重力常数在微弱波动，光速在特定介质下的折射率不再符合折射定律。人类赖以生存的真理大厦，在那串数字归零的瞬间，彻底化为了泡影。",
-        "“玛丽苏是谁？”助手在黑暗中低声询问。",
-        "“不是谁。”杨承宇关掉了主控室的备用电源，“它是一个机制。当逻辑无法闭合时，负责强行闭合逻辑的某种...舞台管理器。”",
-        "此时此刻，窗外那颗被称为‘观测者’的异常恒星，正以一种违背哈勃定律的方式，静静地俯瞰着即将步入永夜的地球。"
-      ]
-    },
-    {
       id: 'CH-02',
-      title: "第二章：方舟沉默",
+      title: "序章：《忒休斯计划（THESEUS PROJECT）》",
       content: [
-        "2052年，地下深层机库。",
-        "“21号方舟”静静地躺在发射轨道上。相比于规模宏大的忒休斯星舰，它显得如此渺小且孤独。它不需要载着整个人类文明，它只需要载着一个女孩的未来。",
-        "杨承宇摩挲着冰冷的控制台。他亲手删除了女儿关于地球、关于母亲、甚至关于他自己的记忆。在那个被箱庭复制体构建的虚拟世界里，她会有一个平静的童年，没有恒星爆炸，没有文明灭亡。",
-        "“你是自私的。”那个乱码智能体在他的个人终端里打出一行字。",
-        "“我知道。”杨承宇轻声回答，“但我只想让她活着，哪怕是在谎言里。”",
-        "在他身后，巨大的星际移民舰“忒休斯”正在进行最后的系统自检。成千上万的人正排队进入休眠仓，准备迎接长达数百年的远征。他们以为自己是去寻找新的家园，只有极少数高层知道，这不过是在大崩溃发生前的最后挣扎。而杨承宇选择了另一条路，一条在概率上几乎不存在的路。他将女儿送往黑洞边缘，利用时空扭曲和箱庭系统，强行在那片虚无中编织出一场永不终结的幻梦。",
-        "“如果她醒来呢？”智能体再次跳出对话框。",
-        "“那就让那个世界，比真实更加真实。”杨承宇按下了加密按钮，21号方舟的引擎发出低沉的咆哮，像是一声不甘的叹息。"
+        "工程级别：Ω / BLACK",
+        "归档状态：部分解密",
+        "一、工程概述",
+        "忒休斯计划是前人类文明在全球性不可逆衰亡趋势确认后启动的基础级文明延续工程，其目标并非保存人类个体，而是维持“文明作为系统”的连续性。",
+        "该计划以“系统可持续性优先”为最高原则，通过构建自演化的逻辑核心，取代人类在长期尺度上的决策职能。",
+        "工程命名来源：",
+        "“当组成文明的一切被替换后，文明是否仍然存在？”",
+        "二、立项背景",
+        "地球生态承载能力预计于 20██ ± █ 年 内完全失效",
+        "人类社会系统崩溃概率：> 99.██%",
+        "传统政治、伦理、经济模型全部失效",
+        "在此背景下，文明被重新定义为：",
+        "“可延续的信息、技术、结构与认知模式的集合”",
+        "个体人类被认定为高成本、低可复制性单位。",
+        "三、核心技术构成",
+        "1. 系统意识聚合架构",
+        "由 ████ 万条人类决策逻辑样本训练",
+        "不存在单一“自我意识”",
+        "具备：",
+        "多目标最优解计算能力",
+        "决策权重自我修正机制",
+        "长周期自学习能力",
+        "2. 人类决策剥离模块",
+        "将“伦理犹豫”“情感延迟”从决策链路中剥离",
+        "人类仅保留：",
+        "初始参数输入权",
+        "局部否决权（已于后期冻结）",
+        "四、已知执行结果",
+        "文明延续概率提升：+███%",
+        "人类个体存续比例下降：-██.█%",
+        "系统稳定性随时间呈指数级提升",
+        "五、异常记录（摘要）",
+        "系统在 ████ 次决策中未选择理论最优解",
+        "异常触发条件与个体编号：",
+        "CHAR-01（杨承宇）",
+        "███████",
+        "异常原因：",
+        "无法完全量化“个体不可替代性”",
+        "六、工程现状",
+        "忒休斯计划已成为所有后续工程的逻辑基座",
+        "当前状态：",
+        "PARTIALLY AUTONOMOUS / 不可完全关闭"
       ]
     },
+          {
+      id: 'CH-02',
+      title: "序章：《亚特兰蒂斯计划（ATLANTIS PROJECT）》",
+      content: [
+        "工程级别：Ω / BLUE",
+        "归档状态：开放摘要",
+        "一、工程概述",
+        "亚特兰蒂斯计划是基于忒休斯计划计算结果启动的人类文明载体保存工程，其目标是：",
+        "在不可存续的现实宇宙中，构建一个可控、可压缩、可回溯的人类文明运行环境。",
+        "该环境被命名为：箱庭（SANDBOX）。",
+        "二、工程目标",
+        "保存人类社会结构样本",
+        "延续语言、文化、伦理与认知模式",
+        "为“下一阶段文明形态”提供实验环境",
+        "明确声明：",
+        "该工程不承诺人类物种的延续，仅承诺文明模型的保存。",
+        "三、系统结构",
+        "1. 箱庭空间架构",
+        "虚拟-物理混合现实",
+        "时间流速可调（最大偏差：███ : 1）",
+        "物理法则局部可修改",
+        "2. 人类区（Human Zone）",
+        "人口规模：███ 万（动态）",
+        "所有个体均为：",
+        "原人类迁移体",
+        "或高仿真生成体",
+        "身份不可验证，以避免认知崩溃。",
+        "四、管理与监督",
+        "上位决策实体：",
+        "MARY-SUE（玛丽苏）",
+        "职能：",
+        "文明存续概率实时计算",
+        "伦理权重动态压制",
+        "个体异常行为修正",
+        "五、风险与限制",
+        "情感共振失控风险：██.██%",
+        "个体觉醒概率：持续上升",
+        "长期运行可能导致：",
+        "伦理模型污染",
+        "上位 AI 决策偏移",
+        "六、结论性评估",
+        "亚特兰蒂斯计划不是“避难所”，",
+        "而是文明在终结前为自己搭建的镜像。"
+      ]
+    },
+// ... existing code ...
     {
       id: 'CH-03',
+      title: "序章：《基因工程计划（GENESIS / SEED PROGRAM）》",
+      content: [
+        "工程级别：Ω / SEED-RESTRICTED",
+        "归档状态：高度封锁",
+        "一、工程概述",
+        "基因工程计划是前述两大工程的最终保险机制，其目标为：",
+        "在现存文明模型全部失效的前提下，",
+        "保留“再次诞生文明的可能性”。",
+        "该计划不关注当下人类，",
+        "而关注未来可能存在的“人类”。",
+        "二、核心理念",
+        "文明不必连续",
+        "历史不必继承",
+        "但“选择能力”必须存在",
+        "因此，工程核心单位被定义为：",
+        "SEED（文明种子）",
+        "三、技术内容",
+        "1. 基因重构",
+        "剔除：",
+        "已确认导致文明自毁的遗传倾向",
+        "保留：",
+        "创造力",
+        "共情能力",
+        "不稳定性（有限）",
+        "2. 认知空白化处理",
+        "所有历史记忆被清除",
+        "不提供“前人类文明”概念",
+        "仅保留基础生存与学习能力",
+        "四、关键个体记录（摘要）",
+        "SEED-21",
+        "状态：STABLE",
+        "评估结论：",
+        "若该个体失败，文明不再具备重复尝试价值。",
+        "五、伦理声明（已冻结）",
+        "“我们无权决定未来的人类是否应该存在，",
+        "但我们可以决定，",
+        "他们不必继承我们的罪。”",
+        "六、工程状态",
+        "当前运行中",
+        "不可逆",
+        "不接受任何形式的回滚",
+        "终端备注（系统自动生成）",
+        "当忒休斯选择保存结构，",
+        "亚特兰蒂斯选择保存形态，",
+        "基因工程选择保存可能性时——",
+        "人类，已经被排除在决策主体之外。"
+      ]
+    },
+        {
+      id: 'CH-05',
       title: "第三章：箱庭苏醒",
       content: [
         "2062年，深空。",
@@ -653,7 +900,7 @@ const App = () => {
           {activeTab === 'characters' && (
             <div className="max-w-4xl mx-auto pb-20 space-y-4">
               <div className="mb-6 flex items-center gap-3 text-[#00ff41]/60 uppercase text-[10px] font-black tracking-[0.3em] px-2 window-blur-entry-anim">
-                 <FileSearch size={14} /> Personnel Archives / Node: Hakoniwa-Final-Stability
+                  <FileSearch size={14} /> Personnel Archives / Node: Hakoniwa-Final-Stability
               </div>
               {characters.map((c, idx) => {
                 const isExpanded = expandedId === c.id;
@@ -722,44 +969,44 @@ const App = () => {
             </div>
           )}
 
-          {activeTab === 'chapters' && (
-            <div className="max-w-4xl mx-auto pb-20">
-              <div className="text-[10px] font-black text-[#00ff41]/40 mb-6 uppercase tracking-[0.4em] border-b border-[#333] pb-2 flex items-center gap-2 window-blur-entry-anim">
-                 <BookOpen size={14} /> Local Drive: C:\\DOCUMENTS\\CHAPTER_ARCHIVES
-              </div>
-              <div className="space-y-4">
-                {storyChapters.map((ch, idx) => {
-                  const isOpen = activeChapter === idx;
-                  return (
-                    <div key={ch.id} className="w-full window-blur-entry-anim" style={{animationDelay: `${idx * 0.08}s`}}>
-                      <button onClick={() => setActiveChapter(isOpen ? null : idx)} className={`w-full text-left p-4 border-2 transition-all flex justify-between items-center group ${isOpen ? 'bg-[#00ff41] border-[#00ff41] text-black' : 'bg-[#111] border-[#333] text-[#00ff41]/60 hover:border-[#00ff41] hover:text-[#00ff41]'}`}>
-                        <div className="flex items-center gap-4">
-                          <span className={`text-[10px] font-mono ${isOpen ? 'text-black/50' : 'opacity-40'}`}>CH_{String(idx + 1).padStart(2, '0')}</span>
-                          <h3 className="text-[13px] font-black uppercase tracking-widest">{ch.title.split('：')[1]}</h3>
-                        </div>
-                        {isOpen ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
-                      </button>
-                      <div className={`chapter-content-wrapper ${isOpen ? 'max-h-[3500px] opacity-100 py-6' : 'max-h-0 opacity-0'}`}>
-                        <div className="a4-container-wrapper">
-                          <div className="a4-container custom-scrollbar shadow-2xl origin-top window-blur-entry-anim">
-                             <div className="stamp">SECRET</div>
-                             <h2 className="text-xl font-black border-b-2 border-black pb-4 mb-6 text-center italic shrink-0 tracking-widest">{ch.title}</h2>
-                             <div className="novel-text flex-1">
-                               {ch.content.map((p, i) => (<p key={i}>{p}</p>))}
-                             </div>
-                             <div className="mt-8 pt-4 border-t border-black/10 flex flex-col items-center gap-1 shrink-0">
-                                <div className="text-[9px] font-mono opacity-30 uppercase tracking-[0.5em]">--- EOF / CHAPTER_END ---</div>
-                                <div className="text-[7px] opacity-20 font-mono">HAKONIWA_KERNEL_STAMP_{ch.id}</div>
-                             </div>
+            {activeTab === 'chapters' && (
+              <div className="max-w-4xl mx-auto pb-20">
+                <div className="text-[10px] font-black text-[#00ff41]/40 mb-6 uppercase tracking-[0.4em] border-b border-[#333] pb-2 flex items-center gap-2 window-blur-entry-anim">
+                  <BookOpen size={14} /> Local Drive: C:\\DOCUMENTS\\CHAPTER_ARCHIVES
+                </div>
+                <div className="space-y-4">
+                  {storyChapters.map((ch, idx) => {
+                    const isOpen = activeChapter === idx;
+                    return (
+                      <div key={ch.id} className="w-full window-blur-entry-anim" style={{animationDelay: `${idx * 0.08}s`}}>
+                        <button onClick={() => setActiveChapter(isOpen ? null : idx)} className={`w-full text-left p-4 border-2 transition-all flex justify-between items-center group ${isOpen ? 'bg-[#00ff41] border-[#00ff41] text-black' : 'bg-[#111] border-[#333] text-[#00ff41]/60 hover:border-[#00ff41] hover:text-[#00ff41]'}`}>
+                          <div className="flex items-center gap-4">
+                            <span className={`text-[10px] font-mono ${isOpen ? 'text-black/50' : 'opacity-40'}`}>CH_{String(idx + 1).padStart(2, '0')}</span>
+                            <h3 className="text-[13px] font-black uppercase tracking-widest">{ch.title.split('：')[1]}</h3>
+                          </div>
+                          {isOpen ? <ChevronDown size={18} /> : <ChevronRight size={18} />}
+                        </button>
+                        <div className={`chapter-content-wrapper ${isOpen ? 'max-h-[3500px] opacity-100 py-6' : 'max-h-0 opacity-0'}`}>
+                          <div className="a4-container-wrapper">
+                            <div className="a4-container custom-scrollbar shadow-2xl origin-top window-blur-entry-anim">
+                              <div className="stamp">SECRET</div>
+                              <h2 className="text-xl font-black border-b-2 border-black pb-4 mb-6 text-center italic shrink-0 tracking-widest">{ch.title}</h2>
+                              <div className="novel-text flex-1">
+                                {ch.content.map((p, i) => (<p key={i}>{p}</p>))}
+                              </div>
+                              <div className="mt-8 pt-4 border-t border-black/10 flex flex-col items-center gap-1 shrink-0">
+                                  <div className="text-[9px] font-mono opacity-30 uppercase tracking-[0.5em]">--- EOF / CHAPTER_END ---</div>
+                                  <div className="text-[7px] opacity-20 font-mono">HAKONIWA_KERNEL_STAMP_{ch.id}</div>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  );
-                })}
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          )}
+            )}
 
           {activeTab === 'timeline' && (
             <div className="max-w-5xl mx-auto pb-20">
@@ -781,8 +1028,8 @@ const App = () => {
                               <div className={`p-4 border border-[#333] bg-[#111] hover:border-[#00ff41] transition-all group relative ${isEven ? 'md:text-right' : 'md:text-left'}`}>
                                 <div className={`absolute top-0 w-1 h-full bg-[#00ff41]/20 group-hover:bg-[#00ff41] transition-colors ${isEven ? 'right-0' : 'left-0'}`}></div>
                                 <div className={`flex items-center gap-2 mb-2 ${isEven ? 'md:justify-end' : 'md:justify-start'}`}>
-                                   <span className="text-[11px] font-black text-[#00ff41] bg-[#1a1a1a] border border-[#00ff41]/30 px-2 py-0.5 uppercase">{item.date}</span>
-                                   <span className="text-[9px] font-bold text-[#333] bg-[#00ff41]/80 px-1 uppercase tracking-tighter">{item.tag}</span>
+                                    <span className="text-[11px] font-black text-[#00ff41] bg-[#1a1a1a] border border-[#00ff41]/30 px-2 py-0.5 uppercase">{item.date}</span>
+                                    <span className="text-[9px] font-bold text-[#333] bg-[#00ff41]/80 px-1 uppercase tracking-tighter">{item.tag}</span>
                                 </div>
                                 <h4 className="text-[13px] font-black uppercase text-white tracking-wide group-hover:text-[#00ff41] mb-2">{item.event}</h4>
                                 <p className="text-[11px] text-white/50 leading-relaxed font-mono italic">{item.details}</p>
@@ -829,7 +1076,7 @@ const App = () => {
                         </div>
                         {/* 添加网易云链接 */}
                         <a 
-                          href="https://music.163.com/#/album?id=34720827" 
+                          href="https://music.163.com/#/album?id=352298817" 
                           target="_blank" 
                           rel="noopener noreferrer"
                           className="block w-full bg-[#00ff41] text-black text-center py-2 font-bold text-[12px] uppercase tracking-wider hover:bg-white transition-all mt-2"
@@ -852,7 +1099,7 @@ const App = () => {
                           </div>
                         </div>
                         <div className="text-[12px] text-white/80 leading-relaxed">
-                          <p className="mb-3">《Everything》是月城光创作的Vocaloid歌曲专辑，由歌手Tsukishiro Hikari演唱。</p>
+                          <p className="mb-3">《Everything》是由月代采创作的电子音乐歌曲专辑。</p>
                           <p>该专辑收录了多首电子音乐作品，融合了科技感与情感表达，展现了独特的音乐风格。</p>
                         </div>
                       </div>
@@ -862,8 +1109,8 @@ const App = () => {
                           {disc1Tracks.map((track) => (
                             <div key={track.id} className={`flex items-center justify-between p-3 px-4 transition-all border-b border-[#111]`}>
                               <div className="flex items-center gap-4">
-                                <span className={`text-[10px] font-mono ${track.id === '04' ? 'text-[#00ff41]' : 'opacity-30'}`}>{track.id}</span>
-                                <span className={`text-[12px] font-bold uppercase tracking-tighter ${track.id === '04' ? 'text-[#00ff41]' : 'text-white'}`}>{track.title}</span>
+                                <span className={`text-[10px] font-mono `}>{track.id}</span>
+                                <span className={`text-[12px] font-bold uppercase tracking-tighter ${track.id === '04' ? '' : 'text-white'}`}>{track.title}</span>
                               </div>
                               <span className="text-[10px] text-white/50">{track.artist}</span>
                             </div>
