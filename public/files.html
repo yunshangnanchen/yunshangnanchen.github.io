@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MULTI-PROJECT ARCHIVE | CLOUDHALL</title>
+    <title>CLOUDHALL</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/yunshangnanchen/Project-Files_yunshang/refs/heads/main/public/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700&family=Noto+Sans+SC:wght@100;300;400;700&family=JetBrains+Mono:wght@100;400&display=swap');
@@ -252,8 +253,8 @@
                     <div class="flex flex-col justify-end vision-fade delay-5">
                         <div class="text-[10px] uppercase tracking-widest opacity-40 mb-4 font-mono">Status: <span class="animate-pulse">Active</span></div>
                         <div class="flex space-x-4">
-                            <button onclick="handleApplication()" class="px-8 py-3 bg-[var(--fg)] text-[var(--bg)] text-[10px] uppercase font-bold tracking-widest hover:opacity-80 transition">资格申请</button>
-                            <button onclick="handleSecretAccess()" class="px-8 py-3 border border-[var(--border)] text-[10px] uppercase font-bold tracking-widest hover:bg-[var(--muted)] transition">机密访问</button>
+                            <button onclick="handleApplication()" class="px-8 py-3 bg-[var(--fg)] text-[var(--bg)] text-[10px] uppercase font-bold tracking-widest hover:opacity-80 transition">Eligibility inquiry</button>
+                            <button onclick="handleSecretAccess()" class="px-8 py-3 border border-[var(--border)] text-[10px] uppercase font-bold tracking-widest hover:bg-[var(--muted)] transition">Encrypted connection</button>
                         </div>
                     </div>
                 </div>
@@ -283,56 +284,73 @@
 
     <script>
         let currentProjectId = 'theseus';
-        const projectData = {
-            theseus: {
-                name: "Theseus",
-                tag: "Classification: Top Secret / Deep Space",
-                title: ["人类火种", "最后避难所"],
-                desc: "我们正在建造的不只是一艘星舰，而是一个可以跨越千年的数字与物质双重箱庭。",
-                techHeader: "曲率引擎系统",
-                specs: [
-                    { label: "引擎状态", value: "驱动就绪" },
-                    { label: "能耗比例", value: "0.004%/年" },
-                    { label: "居住密度", value: "85k/模块" }
-                ],
-                logs: [
-                    { date: "2045.11.21", content: "物理常数稳定性报告：π值收敛异常。" },
-                    { date: "2055.01.01", content: "21号方舟计划正式启动。" }
-                ]
-            },
-            atlantis: {
-                name: "Atlantis",
-                tag: "Classification: Restricted / Abyssal",
-                title: ["深海沉默", "蔚蓝隔离区"],
-                desc: "若星空不可抵达，深海将是最后的温床。我们在海平面下4000米建立永续生态城。",
-                techHeader: "高压生态穹顶",
-                specs: [
-                    { label: "抗压强度", value: "6500 Bar" },
-                    { label: "循环周期", value: "100% 闭环" },
-                    { label: "能量核心", value: "地热裂变" }
-                ],
-                logs: [
-                    { date: "2048.03.15", content: "马里亚纳基地一期工程竣工。" },
-                    { date: "2052.09.30", content: "首批居民迁入深渊。"}
-                ]
-            },
-            genetic: {
-                name: "Genetic",
-                tag: "Classification: Level 5 / Biological",
-                title: ["进化重塑", "永恒螺旋线"],
-                desc: "肉体是脆弱的。我们致力于修改人类基本性状，以适应极端生存环境。进化不再是偶然。",
-                techHeader: "端粒修复矩阵",
-                specs: [
-                    { label: "理论寿命", value: "300+ 年" },
-                    { label: "认知增幅", value: "+400%" },
-                    { label: "代谢抑制", value: "动态可控" }
-                ],
-                logs: [
-                    { date: "2049.07.08", content: "完成基因改造临床测试，性状稳定。" },
-                    { date: "2054.12.25", content: "“新人类”草案通过审批。" }
-                ]
-            }
-        };
+            const projectData = {
+                theseus: {
+                    name: "Theseus",
+                    tag: "Classification: Top Secret / Deep Space",
+                    title: ["人类火种", "最后避难所"],
+                    desc: "我们正在建造的不只是一艘星舰，而是一个可跨越千年的数字与物质双重箱庭。它被设计为可预测、可回滚、可放弃的人类未来。",
+                    techHeader: "曲率引擎系统",
+                    specs: [
+                        { label: "引擎状态", value: "驱动就绪（Δπ校准中）" },
+                        { label: "时间漂移", value: "< 0.0003% / 年" },
+                        { label: "能耗比例", value: "0.004% / 年" },
+                        { label: "居住密度", value: "85,000 人 / 模块" },
+                        { label: "预测依赖", value: "箱庭主时间线" }
+                    ],
+                    logs: [
+                        { date: "2045.11.21", content: "物理常数稳定性报告：π值出现局部收敛异常，恒星爆炸不可逆。" },
+                        { date: "2051.06.02", content: "发现曲率航行与因果回溯存在弱耦合关系。" },
+                        { date: "2055.01.01", content: "21号方舟计划正式启动，部分权限被转移。" }
+                    ]
+                },
+
+                atlantis: {
+                    name: "Atlantis",
+                    tag: "Classification: Restricted / Abyssal",
+                    title: ["深海沉默", "蔚蓝隔离区"],
+                    desc: "若星空不可抵达，深海将是最后的温床。我们在南太平洋深渊带约10000米处建立永续生态城，一个不被预测、不被祝福的文明残影。",
+                    techHeader: "高压生态穹顶",
+                    specs: [
+                        { label: "地理位置", value: "南太平洋\n南纬 48° ～ 52°\n西经 128° ～ 134°" },
+                        { label: "平均深度", value: "9,800 – 10,600 m" },
+                        { label: "抗压强度", value: "1,200-1,500 Bar（冗余设计）" },
+                        { label: "结构形态", value: "半生物-碳基复合体" },
+                        { label: "生态循环", value: "100% 闭环（不可扩展）" },
+                        { label: "主能源核心", value: "地热 + 裂变混合堆" },
+                        { label: "备用能源", value: "小型聚变实验模块（封存）" }
+                    ],
+                    logs: [
+                        { date: "2046.08.29", content: "生物基因工程支撑壁完成抗压测试" },
+                        { date: "2048.03.15", content: "深渊一期结构完成，自修复材料开始适应水压。" },
+                        { date: "2050.11.04", content: "生物结构与岩层融合度超过预期，回滚已不可能。" },
+                        { date: "2052.09.30", content: "首批居民迁入深渊，外部通讯进入延迟模式。" },
+                        { date: "2061.02.17", content: "箱庭预测模型无法覆盖当前生态演化路径。" }
+                    ]
+                },
+
+                genetic: {
+                    name: "Genetic",
+                    tag: "Classification: Level 5 / Biological",
+                    title: ["重塑莱茵", "永恒螺旋线"],
+                    desc: "肉体是脆弱的变量。我们不再等待自然选择，而是主动改写人类的生存参数。进化从此变得可控。",
+                    techHeader: "端粒修复矩阵",
+                    specs: [
+                        { label: "理论寿命", value: "300+ 年（不含异常延伸）" },
+                        { label: "认知增幅", value: "+400%（存在人格偏移风险）" },
+                        { label: "代谢抑制", value: "动态可控" },
+                        { label: "环境适应", value: "高压 / 低光 / 高辐射" },
+                        { label: "伦理状态", value: "已突破红线" }
+                    ],
+                    logs: [
+                        { date: "2049.07.08", content: "完成基因改造生物临床测试，基础性状稳定。" },
+                        { date: "2053.04.19", content: "部分受试者出现非线性认知跃迁。" },
+                        { date: "2053.09.01", content: "人类临床试验阶段性融合10%" },
+                        { date: "2054.12.25", content: "“新人类”草案通过审批，代号：VCB 系列。" }
+                    ]
+                }
+            };
+
 
         function formatTitle(titleArray) {
             return titleArray.map((line, idx) => {
@@ -415,8 +433,8 @@
             modal.classList.remove('show');
             setTimeout(() => modal.style.display = 'none', 300);
         }
-        function handleApplication() { if (currentProjectId === 'theseus') showModal("ACCESS DENIED", "忒休斯计划目前尚未开放申请。", "Status: 403 Forbidden"); else triggerCrash(); }
-        function handleSecretAccess() { showModal("ENCRYPTED TUNNEL REQUIRED", "检测到非安全访问。请使用云幻加密隧道进行机密内容解密。", "Error: SEC_UNTRUSTED_NODE"); }
+        function handleApplication() { if (currentProjectId === 'theseus') showModal("ACCESS DENIED", "申请查询被拒绝，未到开放时间。", "Status: 403 Forbidden"); else triggerCrash(); }
+        function handleSecretAccess() { showModal("ENCRYPTED TUNNEL REQUIRED", "数据链路校验不通过！请跟换代理加密服务器。", "Error: SEC_UNTRUSTED_NODE"); }
         function triggerCrash() {
             const overlay = document.getElementById('crash-overlay');
             overlay.style.display = 'flex'; overlay.classList.add('crashing');

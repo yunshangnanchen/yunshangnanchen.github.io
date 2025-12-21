@@ -91,14 +91,14 @@ const App = () => {
   const projects = [
     { id: 'PROJ-01', title: '箱庭计划', sub: 'Hako-Niwa', desc: '基于舞台机器理论构建的模拟计算矩阵。维持微型现实稳定的最后算力源。', status: 'RUNNING', link: 'https://www.bilibili.com/video/BV1xx411c7mu' },
     { id: 'PROJ-02', title: '忒休斯计划', sub: 'Theseus', desc: '文明火种远征行动。建造巨型星舰逃离崩坏区。', status: 'READY', link: 'https://www.bilibili.com/video/BV1yx411c7gT' },
-    { id: 'PROJ-21', title: '21号方舟', sub: 'Ark-21', desc: '秘密建造的地下生态仓，旨在保存地球最后的自然生物样本。', status: 'STABLE', link: 'https://www.bilibili.com/video/BV1zx411c7hK' },
-    { id: 'PROJ-GE', title: '基因工程', sub: 'Genetic_Eng', desc: '重写双螺旋结构以适应非欧几里得空间的重力畸变。', status: 'REWRITING', link: 'https://www.bilibili.com/video/BV1Yx411c7nQ' }
+    { id: 'PROJ-GE', title: '基因工程', sub: 'Genetic_Eng', desc: '重写双螺旋结构以适应非欧几里得空间的重力畸变。', status: 'REWRITING', link: 'https://www.bilibili.com/video/BV1Yx411c7nQ' },
+    { id: 'PROJ-03', title: '临界生命', sub: 'Star_Sea', desc: '利用星海计划进行星海研究。', status: 'RUNNING', link: 'https://www.bilibili.com/video/BV1Yx411c7nQ' }
   ];
 
   const characters = [
     { 
       id: 'CHAR-01',
-      name: '杨承宇 (Yang Chengyu)', 
+      name: '█承宇 (Yang Chengyu)', 
       role: '前人类文明 · 物理学家 / 系统架构师', 
       status: 'DECEASED / 肉体确认死亡',
       clearance: 'Ω-BLACK / 忒休斯残留权限',
@@ -124,12 +124,12 @@ const App = () => {
         { label: '研究领域', value: '意识映射；记忆分区；情感隔离与共振抑制' },
         { label: '事故记录', value: '箱庭系统第██次封闭测试中出现不可逆认知损伤' },
         { label: '死亡判定', value: '争议性极高（数据删除 ≠ 意识消亡）' },
-        { label: '数据状态', value: '完整人格数据已清除，仅保留算法残影' }
+        { label: '数据状态', value: '数据已清除' }
       ]
     },
     { 
       id: 'CHAR-03',
-      name: '杨███ (Seed-21)', 
+      name: '███ (Seed-21)', 
       role: '前人类后裔 / 文明种子个体', 
       status: 'STABLE',
       clearance: 'SEED-RESTRICTED / SYSTEM-HIDDEN',
@@ -434,7 +434,6 @@ const timelineData = [
         "而是文明在终结前为自己搭建的镜像。"
       ]
     },
-// ... existing code ...
     {
       id: 'CH-03',
       title: "序章：《基因工程计划（GENESIS / SEED PROGRAM）》",
@@ -485,18 +484,6 @@ const timelineData = [
         "人类，已经被排除在决策主体之外。"
       ]
     },
-        {
-      id: 'CH-05',
-      title: "第三章：箱庭苏醒",
-      content: [
-        "2062年，深空。",
-        "黑暗的驾驶舱内，一个绿色的指示灯开始有节奏地闪烁。脑机接口输出稳定的波形：Seed-21 意识已连接。",
-        "女孩睁开了眼。她看到的不是金属舱壁，而是洒满阳光的卧室窗台。微风吹动着白色的窗帘，楼下传来模糊的脚踏车铃声。那是林婉记忆中最喜欢的午后。",
-        "她坐起身，揉了揉眼睛，觉得头有些沉。但她并不害怕。在这个世界里，她被定义为‘被爱’。箱庭系统在后台疯狂运转，抵消着黑洞边缘的引力波动，为她维持着这一刻的永恒。",
-        "系统日志悄无息地生成：[ 实验：21号方舟 ] - [ 状态：运行中 ] - [ 观察员：玛丽苏 ]。",
-        "女孩走下床，光着脚踩在温暖的木地板上。她推开窗户，闻到了栀子花的清香。街道上，邻居们正亲切地互相打招呼，没有人知道自己只是记忆碎片拼凑出来的虚幻影像。在黑洞的视界边缘，时间被无限拉长，外界的一秒钟，在这个箱庭里或许就是一生一世。女孩露出了笑容，那是杨承宇在末日降临前，用尽最后算力为她保留的、属于旧人类文明最后的体温。她伸出手，试图捕捉那抹阳光，手指穿过光影时，带起了一丝难以察觉的数位残响。"
-      ]
-    }
   ];
 
   const WindowFrame = ({ title, children, hoverEffect = false, className = "", contentBg = "bg-[#0a0a0a]/90", textColor = "text-[#00ff41]", animationDelay = "0s", forceAnimate = false, isBootingWindow = false, isSidebar = false }) => {
